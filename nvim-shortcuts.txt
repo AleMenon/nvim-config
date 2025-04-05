@@ -1,0 +1,95 @@
+x - delete the character at the cursor
+i - insert text
+A - append at the end of the line
+a - append after the cursor
+
+dw - delete from the cursor to the next word
+d$ - delete from the cursor to the end of the line
+dd - delete the whole line
+
+To repeat a task, append the command with a number, like:
+
+2dw - delete two words
+
+0 - move to the start of the line
+u - undo the last change
+U - undo all the changes in the line
+<C-r> - undo the undo's
+
+p - put the previous deleted text after the cursor
+r - replace the character under the cursor with the character after r
+ce - delete from the cursor to the end of the word and put in insert mode
+c$ - same as ce, but delete from the cursor to the end of the line
+
+<C-g> - displays your location and the file status
+G - moves to the end of the file
+gg - moves to the first line
+/ and ? - search the file foward/backward (n to next, N to previous)
+:s/old/new - substitute first old word for the new word in the line
+:s/old/new/g - same, but do globally in the line
+:#,#s/old/new/g - same but substitute between two lines #
+:%s/old/new/g - all occurrences in the file
+:%s/old/new/gc - all occurrences in the file, but asks for confirmation
+:noh - take of the highlights caused from the / command
+
+:!command - executes an external command
+:w FILENAME- writes the current neovim file to the disk with name FILENAME
+v motion :w FILENAME - saves the selected lines in the file FILENAME
+:r FILENAME - inserts the content from FILENAME below the cursor
+:r !command - inserts the output of a command below the cursor
+
+o - open a line BELOW the cursor and start Insert mode
+O - open a line ABOVE the cursor
+e - moves to the end of a word
+y - copies text, p pastes it
+R - replace mode until <Esc> is pressed
+:set xxx - sets the option xxx. Some options are:
+
+        'ic' 'ignorecase'   ignore upper/lower case when searching
+        'is' 'incsearch'    show partial matches for a search phrase
+        'hls' 'hlsearch'    highlight all matching phrases
+
+:set noxxx - switches an option off
+
+<C-d> - show the possible completations
+<Tab> - show a window to select the wanted completation
+
+v motion :w !clip.exe- Copy to the windows clipboard
+
+:m+<number> - Move up or down the current line on the file
+
+<C-y> - Move up smothly the cursor
+<C-e> - Move down smothly the cursor
+<C-d> - Scroll down half a page
+<C-u> - Scroll up half a page
+<C-f> - Scroll down a full page
+<C-b> - Scroll up a full page
+
+:e <file_name> - Open a file 
+:enew <file_name> - Create a file
+
+//Neovim custom shortcuts
+
+-- Window management
+vim.keymap.set('n', '<leader>v', '<C-w>v', opts) -- split window vertically
+vim.keymap.set('n', '<leader>h', '<C-w>s', opts) -- split window horizontally
+vim.keymap.set('n', '<leader>se', '<C-w>=', opts) -- make split windows equal width & height
+vim.keymap.set('n', '<leader>xs', ':close<CR>', opts) -- close current split window
+
+-- Navigate between splits
+vim.keymap.set('n', '<C-k>', ':wincmd k<CR>', opts)
+vim.keymap.set('n', '<C-j>', ':wincmd j<CR>', opts)
+vim.keymap.set('n', '<C-h>', ':wincmd h<CR>', opts)
+vim.keymap.set('n', '<C-l>', ':wincmd l<CR>', opts)
+
+-- Resize with arrows
+vim.keymap.set('n', '<Up>', ':resize -2<CR>', opts)
+vim.keymap.set('n', '<Down>', ':resize +2<CR>', opts)
+vim.keymap.set('n', '<Left>', ':vertical resize -2<CR>', opts)
+vim.keymap.set('n', '<Right>', ':vertical resize +2<CR>', opts)
+
+-- Buffers
+vim.keymap.set('n', '<Tab>', ':bnext<CR>', opts)
+vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts)
+vim.keymap.set('n', '<leader>x', ':bdelete!<CR>', opts) -- close buffer
+vim.keymap.set('n', '<leader>b', '<cmd> enew <CR>', opts) -- new buffer
