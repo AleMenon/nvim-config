@@ -24,6 +24,7 @@ require('lazy').setup({
     require 'plugins.gitsigns', -- Git plugin
     require 'plugins.alpha', -- Welcome mensage and recent files
     require 'plugins.indent-blankline', -- Functions line
+    require 'plugins.render-markdown', -- Markdown render
     require 'plugins.misc' -- Some other small plugins
 })
 

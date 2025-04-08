@@ -6,7 +6,6 @@ vim.opt.softtabstop = 3 -- Makes backspacing work consistently with spaces
 vim.opt.number = true -- Show line numbers
 vim.o.relativenumber = true -- Set relative numbered lines
 
-vim.o.clipboard = 'unnamedplus' -- Sync clipboard between OS and system
 vim.o.wrap = false -- Disable wrapping
 vim.o.linebreak = true -- Break at word boundaries instead of cutting words
 vim.o.autoindent = true -- Copy indent from current line when starting a new one
