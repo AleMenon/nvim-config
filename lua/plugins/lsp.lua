@@ -198,6 +198,7 @@ return {
             clangd = {},
             jdtls = {},
             marksman={},
+            texlab={},
             -- gopls = {},
             -- pyright = {},
             -- rust_analyzer = {},

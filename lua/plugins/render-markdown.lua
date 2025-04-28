@@ -6,5 +6,5 @@ return {
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {},
-    vim.keymap.set('n', '<leader>mk', ':RenderMarkdown toggle<CR>', opts) -- toggle markdown
+    vim.keymap.set('n', '<leader>mk', ':RenderMarkdown toggle<CR>', { noremap = true, silent = true }) -- toggle markdown
 }

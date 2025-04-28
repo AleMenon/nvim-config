@@ -68,6 +68,10 @@ v motion :w !clip.exe- Copy to the windows clipboard
 :e <file_name> - Open a file 
 :enew <file_name> - Create a file
 
+za - Toggle fold under cursor
+zM - Close all folds
+zR - Open all folds
+
 //Neovim custom shortcuts
 
 -- Window management
@@ -93,3 +97,15 @@ vim.keymap.set('n', '<Tab>', ':bnext<CR>', opts)
 vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts)
 vim.keymap.set('n', '<leader>x', ':bdelete!<CR>', opts) -- close buffer
 vim.keymap.set('n', '<leader>b', '<cmd> enew <CR>', opts) -- new buffer
+
+-- Toggle line wrapping
+vim.keymap.set('n', '<leader>lw', '<cmd>set wrap!<CR>', opts)
+
+-- Stay in indent mode
+vim.keymap.set('v', '<', '<gv', opts)
+vim.keymap.set('v', '>', '>gv', opts)
+
+-- Move text up and down
+vim.keymap.set('v', '<A-j>', ':m .+1<CR>==gv', opts)
+vim.keymap.set('v', '<A-k>', ':m .-2<CR>==gv', opts)
+

@@ -1,9 +1,15 @@
 return {
-    {
-        -- Autoclose parentheses, brackets, quotes, etc.
-        'windwp/nvim-autopairs',
-        event = 'InsertEnter',
-        config = true,
-        opts = {},
-    },
+   {
+      -- Autoclose parentheses, brackets, quotes, etc.
+      'windwp/nvim-autopairs',
+      event = 'InsertEnter',
+      config = true,
+      opts = {},
+   },
+
+   {
+      --Surround text with brackets, quotes, etc.
+      'echasnovski/mini.surround',
+      version = false
+   },
 }

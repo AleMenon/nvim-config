@@ -30,3 +30,4 @@ require('lazy').setup({
 
 vim.cmd.colorscheme "catppuccin" -- Colortheme setup
 
+require('mini.surround').setup() -- Mini surround setup

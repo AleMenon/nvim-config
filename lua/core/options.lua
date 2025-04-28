@@ -14,3 +14,8 @@ vim.o.autoindent = true -- Copy indent from current line when starting a new one
 vim.o.ignorecase = true -- Case-insensitive searching UNLESS capital in search
 vim.o.smartcase = true -- Smart case
 vim.o.hlsearch = false -- Set highlight on search 
+
+vim.o.foldmethod = "indent" -- Method of folding
+vim.o.foldenable = true -- Alow folding in files
+vim.o.foldlevel = 99 -- Everything starts unfolded
+
