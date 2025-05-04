@@ -31,9 +31,12 @@ vim.keymap.set('n', '<Right>', ':vertical resize +2<CR>', opts)
 
 -- Buffers
 vim.keymap.set('n', '<Tab>', ':bnext<CR>', opts)
-vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts)
+vim.keymap.set('n', '<s-tab>', ':bprevious<cr>', opts)
 vim.keymap.set('n', '<leader>x', ':bdelete!<CR>', opts) -- close buffer
 vim.keymap.set('n', '<leader>b', '<cmd> enew <CR>', opts) -- new buffer
+
+-- Clipboard shortcut for WSL
+vim.keymap.set('v', '<leader>y', ':w !clip.exe<CR><CR>', opts)
 
 -- Toggle line wrapping
 vim.keymap.set('n', '<leader>lw', '<cmd>set wrap!<CR>', opts)
@@ -53,3 +56,8 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz', opts)
 -- Find and center
 vim.keymap.set('n', 'n', 'nzzzv', opts)
 vim.keymap.set('n', 'N', 'Nzzzv', opts)
+
+-- New line up and down
+vim.keymap.set('n', '<leader>o', 'o<Esc>', opts)
+vim.keymap.set('n', '<leader>O', 'O<Esc>', opts)
+
