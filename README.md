@@ -1,6 +1,10 @@
 <h1 align=center>My Neovim Setup</h1>
 This repository contains my Neovim setup, with all the plugins, keymaps and options that I found useful.
 
+![Main Menu](./images/main-menu.png) 
+
+![Open Files](./images/code-img.png)
+
 ## Directory Content
 - **nvim-shortcuts.txt** - This file contains the main commands from Neovim, and also the custom keymaps that are written in the lua/core/keymaps.lua file;
 - **init.lua** - Default init file for Neovim configuration, **essential** for the configuration to work;
