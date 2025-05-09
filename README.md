@@ -14,7 +14,7 @@ Also, if you encounter issues during installation, check the [Known issues](#kno
 
 ### Prerequisites
 
-> [!WARNING]
+> [!NOTE]
 >these prerequisites are only needed if you want to have lsp support for LaTeX
 >If you don't want it, follow the steps written in the [Optional LaTeX suport](#optional-latex-support) section.
 
@@ -31,8 +31,6 @@ sudo apt install nodejs npm
 npm install -g tree-sitter-cli
 ```
 
----
-
 ### Cloning and Configuring Neovim
 
 After making sure everything is ready, follow the steps:
@@ -45,11 +43,9 @@ If you don't want LaTeX support for your Neovim, follow these steps to remove it
 - Remove the line that says `texlab={}` in the `local servers` function in the lua/plugins/lsp.lua file;
 - Optional, but you can also remove the 'latex' from the `ensure_installed` function in the lua/plugins/treesitter.lua file, if you also don't want text highlight for LaTeX files.
 
----
-
 ## Known Issues
 
->[!BUG]
+>[!WARNING]
 >For some reason, this configuration doesn't work with C files on Windows (atleast in my PC).
 > The problem is that for some reason the lsp doesn't recognize functions from the standard libraries, like `printf()` , and also macros like `NULL`.
 >If you find a solution, feel free to make a pull request or contact me on [LinkedIn](https://www.linkedin.com/in/alexandre-menon/).
