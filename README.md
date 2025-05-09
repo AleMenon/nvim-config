@@ -2,11 +2,11 @@
 This repository contains my Neovim setup, with all the plugins, keymaps and options that I found useful.
 
 ## Directory Content
-- nvim-shortcuts.txt - This file contains the main commands from Neovim, and also the custom keymaps that are written in the lua/core/keymaps.lua file;
-- init.lua - Default init file for Neovim configuration, **essential** for the configuration to work;
-- lua/ - Directory for the lua configuration:
-    - lua/core - Keymaps and some other configuration files;
-    - lua/plugins - All the installed plugins in their respective files.
+- **nvim-shortcuts.txt** - This file contains the main commands from Neovim, and also the custom keymaps that are written in the lua/core/keymaps.lua file;
+- **init.lua** - Default init file for Neovim configuration, **essential** for the configuration to work;
+- **lua/** - Directory for the lua configuration:
+    - **lua/core** - Keymaps and some other configuration files;
+    - **lua/plugins** - All the installed plugins in their respective files.
 
 ## Installation
 If you'd like to try this configuration, follow the steps below.
@@ -15,7 +15,7 @@ Also, if you encounter issues during installation, check the [Known issues](#kno
 ### Prerequisites
 
 > [!NOTE]
->these prerequisites are only needed if you want to have lsp support for LaTeX
+>These prerequisites are only needed if you want to have lsp support for LaTeX.<br>
 >If you don't want it, follow the steps written in the [Optional LaTeX suport](#optional-latex-support) section.
 
 1. First, install *nodejs* and *npm* in your machine. The commands below are for linux distros based on **Debian and Ubuntu**:
