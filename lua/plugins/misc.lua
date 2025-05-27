@@ -10,6 +10,14 @@ return {
    {
       --Surround text with brackets, quotes, etc.
       'echasnovski/mini.surround',
-      version = false
+      version = false,
+      opts = {
+         custom_surroundings = {
+            ['('] = { output = { left = '(', right = ')' } },
+            ['['] = { output = { left = '[', right = ']' } },
+            ['{'] = { output = { left = '{', right = '}' } },
+            ['<'] = { output = { left = '<', right = '>' } },
+         },
+      }
    },
 }
