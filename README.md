@@ -45,7 +45,7 @@ After making sure everything is ready, follow the steps:
 ### Optional LaTeX Support
 If you don't want LaTeX support for your Neovim, follow these steps to remove it from your configuration:
 - Remove the line that says `texlab={}` in the `local servers` function in the lua/plugins/lsp.lua file;
-- Optional, but you can also remove the 'latex' from the `ensure_installed` function in the lua/plugins/treesitter.lua file, if you also don't want text highlight for LaTeX files.
+- Remove the 'latex' from the `ensure_installed` function in the lua/plugins/treesitter.lua file, if you also don't want text highlight for LaTeX files.
 
 ## Known Issues
 

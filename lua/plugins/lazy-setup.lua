@@ -24,6 +24,7 @@ return function()
       require 'plugins.indent-blankline', -- Functions line
       require 'plugins.render-markdown', -- Markdown render
       require 'plugins.misc', -- Some other small plugins
-      require 'plugins.oil-nvim' -- File creation and management
+      require 'plugins.oil-nvim', -- File creation and management
+      require 'plugins.none-ls' -- Autoformatting for python
    })
 end
