@@ -6,23 +6,31 @@ This repository contains my Neovim setup, with all the plugins, keymaps and opti
 ![Gruvbox theme](./images/gruvbox-menu.png)
 
 ## Directory Content
-- **nvim-shortcuts.txt** - This file contains the main commands from Neovim, and also the custom keymaps that are written in the lua/core/keymaps.lua file;
+
+- **nvim-shortcuts.txt** - This file contains the basic commands from Neovim, and also the custom keymaps that are written in the lua/core/keymaps.lua file;
 - **init.lua** - Default init file for Neovim configuration, **essential** for the configuration to work;
 - **lua/** - Directory for the lua configuration:
     - **lua/core** - Keymaps and some other configuration files;
-    - **lua/plugins** - All the installed plugins in their respective files.
+    - **lua/plugins** - All the installed plugins in their respective files;
+    - **lua/todofloat** - Custom plugin, todo floating window.
 
 ## Installation
+
 If you'd like to try this configuration, follow the steps below.
 Also, if you encounter issues during installation, check the [Known issues](#known-issues) section or feel free to contact me.
 
 ### Prerequisites
 
-> [!NOTE]
->These prerequisites are only needed if you want to have lsp support for LaTeX.<br>
->If you don't want it, follow the steps written in the [Optional LaTeX suport](#optional-latex-support) section.
+- Python:
+1. Some Neovim plugins require **Python** to work. The commands below install the necessary Python packages for Debian and Ubuntu-based distributions:
 
-1. First, install *nodejs* and *npm* in your machine. The commands below are for linux distros based on **Debian and Ubuntu**:
+```bash
+sudo apt update
+sudo apt install python3 python3-pip python3-venv
+```
+
+- LaTeX:
+1. Latex lsp and highlighting need some extra packages to work. First, install *Nodejs* and *npm* in your machine. The commands below are for linux distros based on **Debian and Ubuntu**:
 
 ```bash
 sudo apt update
@@ -39,13 +47,9 @@ npm install -g tree-sitter-cli
 
 After making sure everything is ready, follow the steps:
 1. Clone the repository and then move all the files to the Neovim configuration folder;
-2. Remove the .git directory;
-3. Open Neovim and everything will be installed with Lazy.nvim.
-
-### Optional LaTeX Support
-If you don't want LaTeX support for your Neovim, follow these steps to remove it from your configuration:
-- Remove the line that says `texlab={}` in the `local servers` function in the lua/plugins/lsp.lua file;
-- Remove the 'latex' from the `ensure_installed` function in the lua/plugins/treesitter.lua file, if you also don't want text highlight for LaTeX files.
+2. Remove the .git and images directories and README.md file;
+3. Remove the nvim-shortcuts.txt file (optional, if you don't find it useful);
+4. Open Neovim and everything will be installed with Lazy.nvim.
 
 ## Known Issues
 
