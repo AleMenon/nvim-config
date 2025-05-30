@@ -12,7 +12,7 @@ return function()
 
    require('lazy').setup({
       require 'plugins.neotree', -- Files tree
-      require 'plugins.colortheme', -- Colortheme
+      require 'plugins.colorschemes', -- Colorscheme plugins
       require 'plugins.bufferline', -- Buffer manager
       require 'plugins.lualine', -- Lualine
       require 'plugins.treesitter', -- Highlighting
@@ -24,7 +24,10 @@ return function()
       require 'plugins.indent-blankline', -- Functions line
       require 'plugins.render-markdown', -- Markdown render
       require 'plugins.misc', -- Some other small plugins
-      require 'plugins.oil-nvim', -- File creation and management
-      require 'plugins.none-ls' -- Autoformatting for python
+      require 'plugins.oil', -- File creation and management
+      require 'plugins.none-ls', -- Autoformatting for python
+      require 'plugins.which-key', -- Useful for finding keymaps you don't remember
+      require 'plugins.flash', -- Teleportation in the code
+      require 'plugins.todo-comments' -- Better comments
    })
 end
