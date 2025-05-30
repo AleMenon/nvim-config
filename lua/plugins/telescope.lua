@@ -21,6 +21,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+
+      -- Telescope-themes plugin
+      'andrew-george/telescope-themes',
    },
    config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -66,6 +69,14 @@ return { -- Fuzzy Finder (files, lsp, etc)
             ['ui-select'] = {
                require('telescope.themes').get_dropdown(),
             },
+            themes = {
+               persist = {
+                  enabled = true,
+                  
+                  -- Path to the file were telescope-themes will set the colorscheme for persistent configuration
+                  path = vim.fn.stdpath("config") .. "/lua/plugins/colorscheme-setup.lua"
+               },
+            },
          },
       }
 
@@ -73,6 +84,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'ui-select')
       pcall(require('telescope').load_extension, 'todo-comments')
+      pcall(require('telescope').load_extension, 'themes')
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
@@ -109,5 +121,8 @@ return { -- Fuzzy Finder (files, lsp, etc)
       vim.keymap.set('n', '<leader>sn', function()
          builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })
+
+      -- Shortcut for telescope-themes
+      vim.keymap.set("n", "<leader>th", ":Telescope themes<CR>", {noremap = true, silent = true, desc = "Theme Switcher"})
    end,
 }

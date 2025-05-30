@@ -61,9 +61,5 @@ vim.keymap.set('n', 'N', 'Nzzzv', opts)
 vim.keymap.set('n', '<leader>o', 'o<Esc>', opts)
 vim.keymap.set('n', '<leader>O', 'O<Esc>', opts)
 
--- Changing themes
-vim.keymap.set('n', '<leader>cp', ':colorscheme catppuccin-mocha<CR>', opts)
-vim.keymap.set('n', '<leader>gb', ':colorscheme gruvbox<CR>', opts)
-
 -- Keymap for my TODO plugin
 vim.keymap.set('n', '<leader>td', ':Td<CR>', opts)
