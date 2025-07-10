@@ -5,7 +5,9 @@ return {
       name = "catppuccin", 
       priority = 1001,
       opts = {
-         no_italic = true,
+         styles = {
+            comments = {},
+         },
       }
    },
 
@@ -17,11 +19,6 @@ return {
       opts = {
          italic = {
             comments = false,
-            strings = false,
-            emphasis = false,
-            comments = false,
-            operators = false,
-            folds = false,
          }
       }
    },

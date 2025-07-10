@@ -197,8 +197,8 @@ return {
       local servers = {
          clangd = {},
          jdtls = {},
-         marksman={},
-         texlab={},
+         marksman = {},
+         texlab = {},
          -- gopls = {},
          -- pyright = {},
          -- rust_analyzer = {},

@@ -84,10 +84,9 @@ local function open_floating_file(target_file)
    -- Open the window with the configurations defined in the win_config() function
    vim.api.nvim_open_win(buf, true, win_config())
 
-   -- Keymap to close the buffer, checks if it's saved, if not, warning
-   vim.api.nvim_buf_set_keymap(buf, 'n', 'q', '', {
+   -- Keymap to close the buffer with q, checks if it's saved, if not, warning (if you found this useful, just uncomment the code below)
+   --[[vim.api.nvim_buf_set_keymap(buf, 'n', 'q', '', {
       noremap = true,
-      silent = true,
       callback = function()
          if vim.api.nvim_get_option_value("modified", {buf = buf}) then
             vim.notify("Save your changes before closing the buffer", vim.log.levels.WARN)
@@ -95,7 +94,7 @@ local function open_floating_file(target_file)
             vim.api.nvim_win_close(0, true)
          end
       end
-   })
+   })]]--
 end
 
 --[[
