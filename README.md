@@ -51,12 +51,13 @@ After making sure everything is ready, follow the steps:
 3. Remove the nvim-shortcuts.txt file (optional, if you don't find it useful);
 4. Open Neovim and everything will be installed with Lazy.nvim.
 
+- Extra:
+1. Some other LSPs might give errors during the installation process. If that happens, just run `:MasonLog` inside Neovim, follow the instructions, and install any remaining required packages.
+
 ## Known Issues
 
->[!WARNING]
->For some reason, this configuration doesn't work with C files on Windows (atleast in my PC).
-> The problem is that for some reason the lsp doesn't recognize functions from the standard libraries, like `printf()` , and also macros like `NULL`.
->If you find a solution, feel free to make a pull request or contact me on [LinkedIn](https://www.linkedin.com/in/alexandre-menon/).
+> [!NOTE]
+>There are no known issues with the configuration at the moment. Feel free to report them to me or open a pull request if you find any.
 
 ## Final Considerations
 
