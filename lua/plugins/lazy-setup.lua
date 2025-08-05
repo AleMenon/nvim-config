@@ -25,7 +25,6 @@ return function()
       require 'plugins.render-markdown', -- Markdown render
       require 'plugins.pairs-and-surrounds', -- Autopair and surround plugins
       require 'plugins.oil', -- File creation and management
-      require 'plugins.none-ls', -- Autoformatting for python
       require 'plugins.which-key', -- Useful for finding keymaps you don't remember
       require 'plugins.flash', -- Teleportation in the code
       require 'plugins.todo-comments', -- Better comments
