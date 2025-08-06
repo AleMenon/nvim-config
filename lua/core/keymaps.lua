@@ -63,3 +63,7 @@ vim.keymap.set('n', '<leader>O', 'O<Esc>', opts)
 
 -- Keymap for my TODO plugin
 vim.keymap.set('n', '<leader>td', ':Td<CR>', opts)
+
+-- Keymaps to change relative number column
+vim.keymap.set({'n', 'v'}, '<leader>ar', ':set relativenumber<CR>', opts)
+vim.keymap.set({'n', 'v'}, '<leader>dr', ':set norelativenumber<CR>', opts)

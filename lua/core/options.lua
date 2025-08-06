@@ -1,7 +1,7 @@
 vim.opt.expandtab = true -- Use spaces instead of tabs
-vim.opt.shiftwidth = 3 -- Set indentation width to 3 spaces
-vim.opt.tabstop = 3 -- Set the width of a tab character to 3 spaces
-vim.opt.softtabstop = 3 -- Makes backspacing work consistently with spaces
+vim.opt.shiftwidth = 4 -- Set indentation width to 4 spaces
+vim.opt.tabstop = 4 -- Set the width of a tab character to 4 spaces
+vim.opt.softtabstop = 4 -- Makes backspacing work consistently with spaces
 
 vim.o.clipboard = 'unnamedplus' -- Sync clipboard between OS and system (comment this line when using WSL)
 vim.opt.number = true -- Show line numbers
