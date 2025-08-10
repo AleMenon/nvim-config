@@ -7,7 +7,6 @@ This repository contains my Neovim setup, with all the plugins, keymaps and opti
 
 ## Directory Content
 
-- **nvim-shortcuts.txt** - This file contains the basic commands from Neovim, and also the custom keymaps that are written in the lua/core/keymaps.lua file;
 - **init.lua** - Default init file for Neovim configuration, **essential** for the configuration to work;
 - **lua/** - Directory for the lua configuration:
     - **lua/core** - Keymaps and some other configuration files;
@@ -16,48 +15,10 @@ This repository contains my Neovim setup, with all the plugins, keymaps and opti
 
 ## Installation
 
-If you'd like to try this configuration, follow the steps below.
-Also, if you encounter issues during installation, check the [Known issues](#known-issues) section or feel free to contact me.
-
-### Prerequisites
-
-- Python:
-1. Some Neovim plugins require **Python** to work. The commands below install the necessary Python packages for Debian and Ubuntu-based distributions:
-
-```bash
-sudo apt update
-sudo apt install python3 python3-pip python3-venv
-```
-
-- LaTeX:
-1. Latex lsp and highlighting need some extra packages to work. First, install *Nodejs* and *npm* in your machine. The commands below are for linux distros based on **Debian and Ubuntu**:
-
-```bash
-sudo apt update
-sudo apt install nodejs npm
-```
-
-2. After installing everything, run the command:
-
-```bash
-npm install -g tree-sitter-cli
-```
-
-### Cloning and Configuring Neovim
-
-After making sure everything is ready, follow the steps:
-1. Clone the repository and then move all the files to the Neovim configuration folder;
-2. Remove the .git and images directories and README.md file;
-3. Remove the nvim-shortcuts.txt file (optional, if you don't find it useful);
-4. Open Neovim and everything will be installed with Lazy.nvim.
-
-- Extra:
-1. Some other LSPs might give errors during the installation process. If that happens, just run `:MasonLog` inside Neovim, follow the instructions, and install any remaining required packages.
-
-## Known Issues
-
-> [!NOTE]
->There are no known issues with the configuration at the moment. Feel free to report them to me or open a pull request if you find any.
+Currently I have 3 branches, one for my Arch Linux configuration, one for my Windows 11 configuration, and this one, that share both configurations without having conflicts. 
+<br>
+If you would like to try my configuration, feel free to follow the installation guide from the branch you see fit.
+Also, if you encounter issues during installation, check the [Known issues](#known-issues) section of the respective branch or feel free to contact me.
 
 ## Final Considerations
 
