@@ -1,25 +1,64 @@
-<h1 align=center>My Neovim Setup</h1>
-This repository contains my Neovim setup, with all the plugins, keymaps and options that I found useful.
+<h1 align="center">My Neovim Setup</h1>
+
+This repository contains my Neovim configuration, including plugins, keymaps, and options that I find useful.
 
 ![Catppuccin theme](./images/catppuccin-menu.png) 
-
 ![Gruvbox theme](./images/gruvbox-menu.png)
 
-## Directory Content
+## Directory Structure
 
-- **init.lua** - Default init file for Neovim configuration, **essential** for the configuration to work;
-- **lua/** - Directory for the lua configuration:
-    - **lua/core** - Keymaps and some other configuration files;
-    - **lua/plugins** - All the installed plugins in their respective files;
-    - **lua/todofloat** - Custom plugin, todo floating window.
+- **lua/** – Main Lua configuration:
+    - **lua/core/** – Keymaps and core configuration files
+    - **lua/plugins/** – Plugin configurations
+    - **lua/todofloat/** – Custom floating TODO window plugin
 
 ## Installation
 
-Currently I have 3 branches, one for my Arch Linux configuration, one for my Windows 11 configuration, and this one, that share both configurations without having conflicts. 
-<br>
-If you would like to try my configuration, feel free to follow the installation guide from the branch you see fit.
-Also, if you encounter issues during installation, check the [Known issues](#known-issues) section of the respective branch or feel free to contact me.
+This setup is designed for Arch Linux. Some packages may not work on other distributions or operating systems (e.g., Windows).  
+If you encounter issues, check the [Known Issues](#known-issues) section or contact me.
 
-## Final Considerations
+### Prerequisites
 
-This configuration was created to meet my daily needs, with all the essential plugins that I found useful. Feel free to change anything that you dislike or add new plugins.
+#### Python
+
+Some Neovim plugins require Python. For Arch-based distros, install with:
+
+```bash
+sudo pacman -Syu
+sudo pacman -S python python-pip
+```
+
+#### LaTeX
+
+LaTeX highlighting requires extra packages. First, install Node.js and npm:
+
+```bash
+sudo pacman -Syu
+sudo pacman -S nodejs npm
+```
+
+Then install tree-sitter-cli for LaTeX highlighting:
+
+```bash
+npm install -g tree-sitter-cli
+```
+
+### Setup Steps
+
+1. Clone this repository and move all files to your Neovim configuration folder.
+2. Remove the `.git`, `images` directories, and `README.md` file.
+3. Optionally, remove `nvim-shortcuts.txt` if you don't need it.
+4. Open Neovim; plugins will be installed automatically via Lazy.nvim.
+
+#### Extra
+
+If you encounter LSP installation errors, run `:MasonLog` in Neovim, follow the instructions, and install any missing packages.
+
+## Known Issues
+
+> **Windows 10:**  
+> The TODO float plugin may not find the `todo.md` file on some PCs. The cause is unknown and seems to affect only certain setups.
+
+## Final Notes
+
+This configuration is tailored to my daily workflow, featuring essential plugins I find useful. Feel free to customize or add new plugins as you like.
