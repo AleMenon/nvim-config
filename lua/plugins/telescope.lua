@@ -24,6 +24,8 @@ return { -- Fuzzy Finder (files, lsp, etc)
 
       -- Telescope-themes plugin
       'andrew-george/telescope-themes',
+      -- Telescope-undo plugin
+      'debugloop/telescope-undo.nvim'
    },
    config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -62,7 +64,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
          },
          pickers = {
             find_files = {
-               hidden = true,
+                find_command = { "fd", "--type", "f", "--no-ignore", "--hidden", "--exclude", ".git" }
             },
          },
          extensions = {
@@ -85,7 +87,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
       pcall(require('telescope').load_extension, 'ui-select')
       pcall(require('telescope').load_extension, 'todo-comments')
       pcall(require('telescope').load_extension, 'themes')
-
+      pcall(require('telescope').load_extension, 'undo')
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
@@ -98,6 +100,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+      vim.keymap.set('n', '<leader>su', '<cmd>Telescope undo<cr>', { desc = '[S]earch [U]ndo'})
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()

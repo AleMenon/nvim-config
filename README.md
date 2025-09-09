@@ -56,6 +56,7 @@ If you encounter LSP installation errors, run `:MasonLog` in Neovim, follow the 
 
 ## Known Issues
 
+> [!BUG]
 > **Windows 10:**  
 > The TODO float plugin may not find the `todo.md` file on some PCs. The cause is unknown and seems to affect only certain setups.
 
