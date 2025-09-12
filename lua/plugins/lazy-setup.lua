@@ -28,6 +28,6 @@ return function()
       require 'plugins.which-key', -- Useful for finding keymaps you don't remember
       require 'plugins.flash', -- Teleportation in the code
       require 'plugins.todo-comments', -- Better comments
-      require 'plugins.csv-view', -- CSV file render
+      -- require 'plugins.csv-view', -- CSV file render
    })
 end

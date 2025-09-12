@@ -72,7 +72,7 @@ vim.keymap.set({'n', 'v'}, '<leader>dr', ':set norelativenumber<CR>', opts)
 vim.keymap.set('n', '<leader>fj', ':%!jq<CR>', opts)
 
 -- Keymaps from spectre
--- NOTE: They are here because i couldn't find a better place to set them
+-- NOTE: They are here because I couldn't find a better place to set them
 vim.keymap.set('n', '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', {
    desc = "Toggle Spectre"
 })
