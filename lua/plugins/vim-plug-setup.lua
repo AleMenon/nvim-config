@@ -3,6 +3,7 @@ return { -- Vim Plug configuration
       call plug#begin('~/.local/share/nvim/plugged')
 
       Plug 'Jorenar/COBOL.vim'
+      Plug 'nvim-pack/nvim-spectre'
 
       call plug#end()
    ]]
