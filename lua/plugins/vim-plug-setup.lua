@@ -4,7 +4,6 @@ return { -- Vim Plug configuration
 
       Plug 'Jorenar/COBOL.vim'
       Plug 'nvim-pack/nvim-spectre'
-      Plug 'mechatroner/rainbow_csv'
 
       call plug#end()
    ]]
