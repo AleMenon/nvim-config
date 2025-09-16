@@ -29,5 +29,6 @@ return function()
       require 'plugins.flash', -- Teleportation in the code
       require 'plugins.todo-comments', -- Better comments
       require 'plugins.csv-view', -- CSV file render
+      require 'plugins.yazi-nvim', -- Yazi integration plugin
    })
 end
