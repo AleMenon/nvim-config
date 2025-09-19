@@ -22,4 +22,12 @@ return {
          }
       }
    },
+
+   -- Tokyonight colorscheme
+   {
+      "folke/tokyonight.nvim",
+      lazy = false,
+      priority = 1000,
+      opts = {},
+  }
 }

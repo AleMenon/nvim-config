@@ -35,7 +35,7 @@ return {
    vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" }),
 
    -- Open parent directory in float window
-   vim.keymap.set("n", "<space>=", function ()
+   vim.keymap.set("n", "<space>-", function ()
       require("oil").toggle_float()
    end, {desc="Float window"})
 }
