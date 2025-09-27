@@ -17,7 +17,11 @@ local M = {}
 --]]
 local function expand_path(path)
    if path:sub(1, 1) == "~" then
-      return os.getenv("HOME") .. path:sub(2)
+      local home = os.getenv("HOME") or os.getenv("USERPROFILE")
+      if not home then
+         error("Could not determine home directory")
+      end
+      return home .. path:sub(2)
    end
 
    return path
