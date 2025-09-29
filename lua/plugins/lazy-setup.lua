@@ -11,7 +11,6 @@ return function()
    vim.opt.rtp:prepend(lazypath)
 
    require('lazy').setup({
-      require 'plugins.neotree', -- Files tree
       require 'plugins.colorschemes', -- Colorscheme plugins
       require 'plugins.bufferline', -- Buffer manager
       require 'plugins.lualine', -- Lualine
@@ -29,6 +28,8 @@ return function()
       require 'plugins.flash', -- Teleportation in the code
       require 'plugins.todo-comments', -- Better comments
       require 'plugins.csv-view', -- CSV file render
-      require 'plugins.yazi-nvim', -- Yazi integration plugin
+      require 'plugins.markdown-preview', -- Web markdown preview
+      require 'plugins.vim-fugitive', -- Plugin to run git commands inside neovim
+      require 'plugins.gitgraph', -- Gitgraph
    })
 end
