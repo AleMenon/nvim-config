@@ -56,10 +56,12 @@ If you encounter LSP installation errors, run `:MasonLog` in Neovim, follow the 
 ## Known Issues
 
 > [!BUG]
+>
 > **Windows 10:**  
 > The TODO float plugin may not find the `todo.md` file on some PCs. It seems to be a path problem.
 
 > [!SUCCESS]
+>
 > It's not the best solution, but since a few updates ago, you only need to create the todo.md file at ~/.config/nvim/lua/todofloat/ and it will work again.
 
 ## Final Notes
