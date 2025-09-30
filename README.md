@@ -2,8 +2,8 @@
 
 This repository contains my Neovim configuration, including plugins, keymaps, and options that I find useful.
 
-![Catppuccin theme](./images/catppuccin-menu.png) 
-![Gruvbox theme](./images/gruvbox-menu.png)
+![Catppuccin menu](./images/catppuccin-menu.png) 
+![Syntax highlight](./images/syntax-highlight-and-neotree.png) 
 
 ## Directory Structure
 
@@ -45,10 +45,9 @@ npm install -g tree-sitter-cli
 
 ### Setup Steps
 
-1. Clone this repository and move all files to your Neovim configuration folder.
-2. Remove the `.git`, `images` directories, and `README.md` file.
-3. Optionally, remove `nvim-shortcuts.txt` if you don't need it.
-4. Open Neovim; plugins will be installed automatically via Lazy.nvim.
+1. Clone this repository and move all files to your Neovim configuration folder;
+2. Remove the `.git` and `images` directories, `README.md` and `.gitignore` files;
+3. Open Neovim, plugins will be installed automatically via Lazy.nvim.
 
 #### Extra
 
@@ -58,8 +57,11 @@ If you encounter LSP installation errors, run `:MasonLog` in Neovim, follow the 
 
 > [!BUG]
 > **Windows 10:**  
-> The TODO float plugin may not find the `todo.md` file on some PCs. The cause is unknown and seems to affect only certain setups.
+> The TODO float plugin may not find the `todo.md` file on some PCs. It seems to be a path problem.
+
+> [!SUCCESS]
+> It's not the best solution, but since a few updates ago, you only need to create the todo.md file at ~/.config/nvim/lua/todofloat/ and it will work again.
 
 ## Final Notes
 
-This configuration is tailored to my daily workflow, featuring essential plugins I find useful. Feel free to customize or add new plugins as you like.
+This configuration is tailored to my daily workflow, featuring essential plugins I find useful. Feel free to customize as you like.
