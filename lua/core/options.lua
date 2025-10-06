@@ -27,5 +27,7 @@ vim.opt.scrolloff = 5 -- Minimal number of screen lines to keep above and below 
 -- instead raise a dialog asking if you wish to save the current file(s)
 vim.opt.confirm = true
 
+vim.opt.iskeyword:remove("_") -- Remove underscore from word characters
+
 -- vim.cobol plugin variables
 vim.g.cobol_colorcolumns = 1
