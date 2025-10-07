@@ -57,14 +57,14 @@ return {
             desc = "GitGraph - Draw",
         },
         {
-            "<leader>dc",
+            "<leader>cd",
             ":DiffviewClose<CR>",
             desc = "DiffviewClose", 
             noremap = true, 
             silent = true,
         },
         {
-            "<leader>do",
+            "<leader>od",
             ":DiffviewOpen<CR>",
             desc = "DiffviewOpen", 
             noremap = true, 
