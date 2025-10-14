@@ -32,5 +32,6 @@ return function()
       require 'plugins.markdown-preview', -- Web markdown preview
       require 'plugins.vim-fugitive', -- Plugin to run git commands inside neovim
       require 'plugins.gitgraph', -- Gitgraph
+      require 'plugins.toggleterm', -- Plugin for using scooter
    })
 end

@@ -72,18 +72,3 @@ vim.keymap.set({'n', 'v'}, '<leader>dr', ':set norelativenumber<CR>', opts)
 
 -- Keymap to format a json file
 vim.keymap.set('n', '<leader>fj', ':%!jq<CR>', opts)
-
--- Keymaps from spectre
--- NOTE: They are here because I couldn't find a better place to set them
-vim.keymap.set('n', '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', {
-   desc = "Toggle Spectre"
-})
-vim.keymap.set('n', '<leader>sc', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
-   desc = "Search current word"
-})
-vim.keymap.set('v', '<leader>sc', '<esc><cmd>lua require("spectre").open_visual()<CR>', {
-   desc = "Search current word"
-})
-vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
-   desc = "Search on current file"
-})
