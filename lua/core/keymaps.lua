@@ -60,10 +60,6 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz', opts)
 vim.keymap.set('n', 'n', 'nzzzv', opts)
 vim.keymap.set('n', 'N', 'Nzzzv', opts)
 
--- New line up and down
-vim.keymap.set('n', '<leader>o', 'o<Esc>', opts)
-vim.keymap.set('n', '<leader>O', 'O<Esc>', opts)
-
 -- Keymap for my TODO plugin
 vim.keymap.set('n', '<leader>td', ':Td<CR>', opts)
 

@@ -33,7 +33,5 @@ return function()
       require 'plugins.vim-fugitive', -- Plugin to run git commands inside neovim
       require 'plugins.gitgraph', -- Gitgraph
       require 'plugins.toggleterm', -- Plugin for using scooter
-      -- TODO: CodeCompanion plugin need some adjustments
-      -- require 'plugins.code-companion', 
    })
 end

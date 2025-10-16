@@ -43,11 +43,6 @@ Then install tree-sitter-cli for LaTeX highlighting:
 npm install -g tree-sitter-cli
 ```
 
-#### OpenAI API key
-
-It's necessary to have a `.env` file in your neovim directory with `OPENAI_API_KEY = "YOUR_API_KEY"` property, this is needed for CodeCompanion plugin to work.
-Also, if you're on Windows, it's recommended to use powershell as your terminal, since the command to get the API key in the file is based on powershell.
-
 ### Setup Steps
 
 1. Clone this repository and move all files to your Neovim configuration folder;
@@ -61,7 +56,6 @@ Also, if you're on Windows, it's recommended to use powershell as your terminal,
 2. Windows settings:
     - For todofloat plugin to work, change the path being passed as parameter in the `init.lua` file.
     - Icons being used in the GitGraph plugin aren't working on Windows, so simply comment the `symbols = {...}` section to use the default ones.
-    - For CodeCompanion to work, change the path inside the configuration, for it to find your `.env` file.
     - Files with things that need changing depending on the system you're in have a *TODO* comment right above them with instructions.
 
 ## Known Issues
