@@ -38,6 +38,7 @@ vim.keymap.set('n', '<leader>xb', ':bdelete!<CR>', opts) -- close buffer
 vim.keymap.set('n', '<leader>b', '<cmd> enew <CR>', opts) -- new buffer
 
 -- Clipboard shortcut for WSL
+-- TODO: Uncomment this line if you're using wsl
 -- vim.keymap.set('v', '<leader>y', ':w !clip.exe<CR><CR>', opts)
 
 -- Toggle line wrapping

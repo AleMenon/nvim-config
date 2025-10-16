@@ -3,7 +3,8 @@ vim.opt.shiftwidth = 4 -- Set indentation width to 4 spaces
 vim.opt.tabstop = 4 -- Set the width of a tab character to 4 spaces
 vim.opt.softtabstop = 4 -- Makes backspacing work consistently with spaces
 
-vim.o.clipboard = 'unnamedplus' -- Sync clipboard between OS and system (comment this line when using WSL)
+-- TODO: Comment this line if you're using wsl
+vim.o.clipboard = 'unnamedplus' -- Sync clipboard between OS and system
 vim.opt.number = true -- Show line numbers
 vim.o.relativenumber = true -- Set relative numbered lines
 

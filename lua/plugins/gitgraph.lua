@@ -3,6 +3,7 @@ return {
     dependencies = { 'sindrets/diffview.nvim' },
     opts = {
         git_cmd = "git",
+        -- TODO: Comment the symbols table if you're on Windows
         symbols = {
             merge_commit = '',
             commit = '',
