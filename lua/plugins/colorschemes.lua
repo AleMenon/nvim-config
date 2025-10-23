@@ -29,5 +29,18 @@ return {
       lazy = false,
       priority = 1000,
       opts = {},
+  },
+
+  -- Nightingale colorscheme
+  {
+      "xeind/nightingale.nvim",
+      lazy = false,
+      priority = 1000,
+      config = function()
+          require("nightingale").setup({
+              transparent = false,
+          })
+          vim.cmd("colorscheme nightingale")
+      end,
   }
 }
