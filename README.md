@@ -28,6 +28,14 @@ sudo pacman -Syu
 sudo pacman -S python python-pip
 ```
 
+#### Gcc and Make
+
+Gcc and make are required to compile some dependencies. Install the necessary tools with:
+
+```bash
+sudo pacman -S base-devel
+```
+
 #### LaTeX
 
 LaTeX highlighting requires extra packages. First, install Node.js and npm:

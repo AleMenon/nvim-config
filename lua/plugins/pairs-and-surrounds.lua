@@ -9,7 +9,7 @@ return {
 
    {
       --Surround text with brackets, quotes, etc.
-      'echasnovski/mini.surround',
+      'nvim-mini/mini.surround',
       version = false,
       opts = {
          custom_surroundings = {

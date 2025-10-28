@@ -16,8 +16,9 @@ return {
          topdelete = { text = '‾' },
          changedelete = { text = '~' },
       },
-      current_line_blame = true,
-
+      current_line_blame_opts = {
+          delay = 0,
+      },
       vim.keymap.set('n', '<leader>gb', ':Gitsigns blame<CR>', { desc = "[G]it [B]lame", noremap = true, silent = true }),
       vim.keymap.set('n', '<leader>gl', ':Gitsigns toggle_current_line_blame<CR>', { desc = "[G]it blame [L]ine", noremap = true, silent = true }),
       vim.keymap.set('n', '<leader>gn', ':Gitsigns next_hunk<CR>', { desc = "[G]it [N]ext hunk", noremap = true, silent = true }),

@@ -24,13 +24,12 @@ return function()
       require 'plugins.render-markdown', -- Markdown render
       require 'plugins.pairs-and-surrounds', -- Autopair and surround plugins
       require 'plugins.oil', -- File creation and management
-      require 'plugins.neo-tree', -- File tree plugin
       require 'plugins.which-key', -- Useful for finding keymaps you don't remember
       require 'plugins.flash', -- Teleportation in the code
       require 'plugins.todo-comments', -- Better comments
       require 'plugins.csv-view', -- CSV file render
       require 'plugins.markdown-preview', -- Web markdown preview
-      require 'plugins.vim-fugitive', -- Plugin to run git commands inside neovim
+      require 'plugins.fugitive', -- Plugin to run git commands inside neovim
       require 'plugins.gitgraph', -- Gitgraph
       require 'plugins.toggleterm', -- Plugin for using scooter
    })
