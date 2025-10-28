@@ -18,6 +18,7 @@ This setup is primarily designed for Arch Linux, but it can also work on Windows
 If you encounter issues, check the [Known Issues](#known-issues) section or contact me.
 
 ### Prerequisites
+---
 
 #### Python
 
@@ -51,7 +52,12 @@ Then install tree-sitter-cli for LaTeX highlighting:
 npm install -g tree-sitter-cli
 ```
 
+#### Scooter
+
+For the replace tool configuration found in the `scooter.lua` file inside **plugins/** folder, you'll need to install scooter CLI, see more about it in the [Scooter](https://github.com/thomasschafer/scooter) GitHub page.
+
 ### Setup Steps
+---
 
 1. Clone this repository and move all files to your Neovim configuration folder;
 2. Feel free to remove the `.git` and `images` directories, `README.md` and `.gitignore` files if you want;

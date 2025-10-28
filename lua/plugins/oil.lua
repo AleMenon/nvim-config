@@ -24,6 +24,9 @@ return {
       view_options = {
          show_hidden = true,
       },
+      float = {
+          border = "rounded",
+      },
    },
    -- Optional dependencies
    dependencies = { { "echasnovski/mini.icons", opts = {} } },
