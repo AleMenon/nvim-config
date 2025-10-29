@@ -28,6 +28,9 @@ return {
       float = {
           border = "rounded",
       },
+      confirmation = {
+            border = "rounded",
+        }
    },
    -- Optional dependencies
    dependencies = { { "echasnovski/mini.icons", opts = {} } },

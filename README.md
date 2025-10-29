@@ -1,9 +1,11 @@
-<h1 align="center">My Neovim Setup</h1>
+<h1 align="center">Neovim Config</h1>
 
 This repository contains my Neovim configuration, including plugins, keymaps, and options that I find useful.
 
-![Catppuccin menu](./images/catppuccin-menu.png) 
-![Syntax highlight](./images/syntax-highlight-and-neotree.png) 
+![Menu](./images/menu.png) 
+![Plugins](./images/plugins.png) 
+![Telescope](./images/files-and-telescope.png) 
+![LSP Manager](./images/lsp-manager.png)
 
 ## Directory Structure
 
