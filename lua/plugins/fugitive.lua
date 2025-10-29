@@ -1,5 +1,6 @@
 return {
     'tpope/vim-fugitive',
+    event = 'VeryLazy',
     config = function() 
         vim.keymap.set('n', '<leader>gm', ':Gvdiffsplit!<CR>', { desc = "[G]it [M]ergetool", noremap = true, silent = true })
         vim.keymap.set('n', '<leader>fg', ':tab G<CR>', { desc = "[F]u[G]itive", noremap = true, silent = true })

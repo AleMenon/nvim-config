@@ -3,6 +3,7 @@ return {
    {
       "catppuccin/nvim", 
       name = "catppuccin", 
+      lazy = false,
       priority = 1001,
       opts = {
          styles = {
@@ -15,6 +16,7 @@ return {
    { 
       "ellisonleao/gruvbox.nvim", 
       priority = 1000 , 
+      lazy = false,
       config = true,
       opts = {
          italic = {
