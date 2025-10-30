@@ -5,7 +5,6 @@ This repository contains my Neovim configuration, including plugins, keymaps, an
 ![Menu](./images/menu.png) 
 ![Plugins](./images/plugins.png) 
 ![Telescope](./images/files-and-telescope.png) 
-![LSP Manager](./images/lsp-manager.png)
 
 ## Directory Structure
 
