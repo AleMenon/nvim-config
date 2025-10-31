@@ -68,4 +68,4 @@ vim.keymap.set({'n', 'v'}, '<leader>ar', ':set relativenumber<CR>', opts)
 vim.keymap.set({'n', 'v'}, '<leader>dr', ':set norelativenumber<CR>', opts)
 
 -- Keymap to format a json file
-vim.keymap.set('n', '<leader>fj', ':%!jq<CR>', opts)
+vim.keymap.set('n', '<leader>fj', ':silent! %s/\'/\"/g<CR>:silent! %s/False/false/g<CR>:silent! %s/True/true/g<CR>:%!jq<CR>', opts)
