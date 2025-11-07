@@ -29,6 +29,6 @@ return {
       vim.keymap.set('n', '<leader>gu', ':Gitsigns undo_stage_hunk<CR>', { desc = "[G]it [U]ndo Stage Hunk", noremap = true, silent = true }),
       vim.keymap.set('n', '<leader>gd', ':Gitsigns diffthis<CR>', { desc = "[G]it [D]iffthis", noremap = true, silent = true }),
       vim.keymap.set('n', '<leader>gk', ':Gitsigns preview_hunk_inline<CR>', { desc = "[G]it Preview Hun[k] Inline", noremap = true, silent = true }),
-      vim.keymap.set('n', '<leader>gr', ':Gitsigns reset_hunk<CR>', { desc = "[G]it [R]eset Hunk", noremap = true, silent = true }),
+      vim.keymap.set({'n', 'v'}, '<leader>gr', ':Gitsigns reset_hunk<CR>', { desc = "[G]it [R]eset Hunk", noremap = true, silent = true }),
    },
 }

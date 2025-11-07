@@ -59,6 +59,9 @@ return {
                vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
             end
 
+            -- Open diagnostic in a floating windows.
+            map('<leader>fd', ':lua vim.diagnostic.open_float()<CR>', '[F]loating [D]iagnostic')
+
             -- Jump to the definition of the word under your cursor.
             --  This is where a variable was first declared, or where a function is defined, etc.
             --  To jump back, press <C-t>.
@@ -136,16 +139,6 @@ return {
                      vim.api.nvim_clear_autocmds { group = 'kickstart-lsp-highlight', buffer = event2.buf }
                   end,
                })
-            end
-
-            -- The following code creates a keymap to toggle inlay hints in your
-            -- code, if the language server you are using supports them
-            --
-            -- This may be unwanted, since they displace some of your code
-            if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
-               map('<leader>th', function()
-                  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
-               end, '[T]oggle Inlay [H]ints')
             end
          end,
       })
