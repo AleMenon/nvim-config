@@ -10,7 +10,7 @@ return {
    {
       --Surround text with brackets, quotes, etc.
       'nvim-mini/mini.surround',
-      event = 'BufEnter',
+      event = 'VeryLazy',
       version = false,
       opts = {
          custom_surroundings = {
