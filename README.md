@@ -12,6 +12,7 @@ This repository contains my Neovim configuration, including plugins, keymaps, an
     - **lua/core/** – Keymaps and core configuration files
     - **lua/plugins/** – Plugin configurations
     - **lua/todofloat/** – Custom floating TODO window plugin
+- **lsp/** - Main lsp configurations overwrite
 
 ## Installation
 
