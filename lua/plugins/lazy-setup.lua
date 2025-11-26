@@ -22,7 +22,7 @@ return function()
         require 'plugins.alpha', -- Welcome mensage and recent files
         require 'plugins.indent-blankline', -- Functions line
         require 'plugins.render-markdown', -- Markdown render
-        -- require 'plugins.oil', -- File creation and management
+        require 'plugins.oil', -- File creation and management
         require 'plugins.which-key', -- Useful for finding keymaps you don't remember
         require 'plugins.flash', -- Teleportation in the code
         require 'plugins.todo-comments', -- Better comments
@@ -32,6 +32,6 @@ return function()
         require 'plugins.gitgraph', -- Gitgraph
         require 'plugins.toggleterm', -- Plugin for using scooter
         require 'plugins.misc', -- Other useful plugins
-        require 'plugins.fyler', -- File creation and management (Testing)
+        -- require 'plugins.fyler', -- File creation and management (Not in use because of bugs on Windows)
     })
 end
