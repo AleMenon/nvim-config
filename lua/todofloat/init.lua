@@ -44,7 +44,7 @@ end
 --    table: Table with the settings for the buffer.
 --]]
 local function win_config()
-   local width = math.min(math.floor(vim.o.columns * 0.8), 128)
+   local width = math.floor(vim.o.columns * 0.4)
    local height = math.floor(vim.o.lines * 0.8)
 
    return {
@@ -88,7 +88,7 @@ local function open_floating_file(target_file)
    -- Open the window with the configurations defined in the win_config() function
    vim.api.nvim_open_win(buf, true, win_config())
 
-   -- Keymap to close the buffer with q, checks if it's saved, if not, warning (if you found this useful, just uncomment the code below)
+   -- NOTE: Keymap to close the buffer with q, checks if it's saved, if not, warning (if you found this useful, just uncomment the code below)
    --[[vim.api.nvim_buf_set_keymap(buf, 'n', 'q', '', {
       noremap = true,
       callback = function()
