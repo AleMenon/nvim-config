@@ -61,6 +61,16 @@ return { -- Fuzzy Finder (files, lsp, etc)
                   ['<C-l>'] = require('telescope.actions').select_default, -- open file
                },
             },
+            vimgrep_arguments = {
+                "rg",
+                "--color=never",
+                "--no-heading",
+                "--with-filename",
+                "--line-number",
+                "--column",
+                "--smart-case",
+                "--no-ignore"
+            },
          },
          pickers = {
             find_files = {
