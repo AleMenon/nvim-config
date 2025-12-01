@@ -53,8 +53,8 @@ vim.keymap.set('v', '<', '<gv', opts)
 vim.keymap.set('v', '>', '>gv', opts)
 
 -- Move text up and down
-vim.keymap.set('v', '<A-j>', ':m .+1<CR>==gv', opts)
-vim.keymap.set('v', '<A-k>', ':m .-2<CR>==gv', opts)
+vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv", opts)
+vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", opts)
 
 -- Vertical scroll and center
 vim.keymap.set('n', '<C-d>', '<C-d>zz', opts)
@@ -73,8 +73,8 @@ vim.keymap.set({'n', 'v'}, '<leader>dr', ':set norelativenumber<CR>', opts)
 
 -- Keymap to format a json file
 vim.keymap.set(
-    'n', 
-    '<leader>fj', 
-    ':%s/\'/\"/ge<CR>:%s/False/false/ge<CR>:%s/True/true/ge<CR>:%s/None/null/ge<CR>:%!jq<CR>', 
+    'n',
+    '<leader>fj',
+    ':%s/\'/\"/ge<CR>:%s/False/false/ge<CR>:%s/True/true/ge<CR>:%s/None/null/ge<CR>:%!jq<CR>',
     opts
 )
