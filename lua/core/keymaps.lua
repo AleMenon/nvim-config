@@ -71,10 +71,30 @@ vim.keymap.set('n', '<leader>td', ':Td<CR>', opts)
 vim.keymap.set({'n', 'v'}, '<leader>ar', ':set relativenumber<CR>', opts)
 vim.keymap.set({'n', 'v'}, '<leader>dr', ':set norelativenumber<CR>', opts)
 
--- Keymap to format a json file
-vim.keymap.set(
-    'n',
-    '<leader>fj',
-    ':%s/\'/\"/ge<CR>:%s/False/false/ge<CR>:%s/True/true/ge<CR>:%s/None/null/ge<CR>:%!jq<CR>',
-    opts
-)
+-- Keymap to format a json in a new buffer
+vim.keymap.set('n', '<leader>fj', function ()
+
+    -- Create a buffer
+    local buf = vim.api.nvim_create_buf(true, false)
+    vim.api.nvim_set_current_buf(buf)
+
+    -- Set filetype and name for the new buffer
+    vim.bo.filetype = 'json'
+    vim.api.nvim_buf_set_name(0, 'tmp.json')
+
+    -- Paste yanked json
+    vim.cmd('normal! p')
+
+    -- Convert fields from python to json format
+    vim.cmd("%s/'/\"/ge")
+    vim.cmd("%s/False/false/ge")
+    vim.cmd("%s/True/true/ge")
+    vim.cmd("%s/None/null/ge")
+
+    -- Format with jq
+    vim.cmd("%!jq")
+
+    -- Indent buffer
+    vim.cmd("normal gg=G")
+    vim.cmd("LspRestart jsonls")
+end, opts)
