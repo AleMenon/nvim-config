@@ -32,6 +32,5 @@ return function()
         require 'plugins.gitgraph', -- Gitgraph
         require 'plugins.toggleterm', -- Plugin for using scooter
         require 'plugins.misc', -- Other useful plugins
-        -- require 'plugins.fyler', -- File creation and management (Not in use because of bugs on Windows)
     })
 end
