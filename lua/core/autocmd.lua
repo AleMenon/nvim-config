@@ -91,3 +91,11 @@ vim.api.nvim_create_autocmd("CursorMovedI", {
 		vim.lsp.buf.clear_references()
 	end,
 })
+
+-- set comment string for robot files
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "robot",
+    callback = function()
+        vim.opt_local.commentstring = "# %s"
+    end,
+})
