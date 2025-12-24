@@ -61,6 +61,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
                   ['<C-l>'] = require('telescope.actions').select_default, -- open file
                },
             },
+            preview = {
+                treesitter = false,
+            },
             vimgrep_arguments = {
                 "rg",
                 "--color=never",
