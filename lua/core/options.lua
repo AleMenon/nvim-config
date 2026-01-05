@@ -30,5 +30,14 @@ vim.opt.confirm = true
 
 vim.opt.iskeyword:remove("_") -- Remove underscore from word characters
 
--- vim.cobol plugin variables
-vim.g.cobol_colorcolumns = 1
+-- Session options, these are the default ones, add more if needed
+vim.opt.sessionoptions = {
+    'buffers',
+    'curdir',
+    'folds',
+    'help',
+    'tabpages',
+    'winsize',
+    'terminal',
+}
+vim.opt.undofile = true -- Restore the undotree from the file

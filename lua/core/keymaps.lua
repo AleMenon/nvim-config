@@ -40,7 +40,7 @@ vim.keymap.set('n', '<Tab>', ':bnext<CR>', opts)
 vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts)
 vim.keymap.set('n', '<leader>xb', function()
     local buffers = vim.fn.getbufinfo({ buflisted = 1 })
-    if #buffers > 1 then
+    if #buffers > 1 and vim.bo.buftype ~= 'help' then
         vim.cmd('Bdelete!')
     else
         vim.cmd('bdelete!')

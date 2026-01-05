@@ -62,7 +62,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
                },
             },
             preview = {
-                treesitter = false,
+                treesitter = true,
             },
             vimgrep_arguments = {
                 "rg",
@@ -113,7 +113,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
-      vim.keymap.set('n', '<leader>su', '<cmd>Telescope undo<cr>', { desc = '[S]earch [U]ndo'})
+      vim.keymap.set('n', '<leader>su', '<cmd>Telescope undo<cr>', { desc = '[S]earch [U]ndo'}) -- <C-r> to restore
 
       -- Shortcut for searching your Neovim configuration files
       vim.keymap.set('n', '<leader>sn', function()
