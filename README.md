@@ -36,7 +36,14 @@ sudo pacman -S python python-pip
 Gcc and make are required to compile some dependencies. Install the necessary tools with:
 
 ```bash
+sudo pacman -Syu
 sudo pacman -S base-devel
+```
+
+On Windows, another step is needed for treesitter to work, run the command or just insert this line at the `$PROFILE` file:
+
+```bash
+$env:CC="gcc"
 ```
 
 #### LaTeX
@@ -57,6 +64,19 @@ npm install -g tree-sitter-cli
 #### Scooter
 
 For the replace tool configuration found in the `scooter.lua` file inside **plugins/** folder, you'll need to install scooter CLI, see more about it in the [Scooter](https://github.com/thomasschafer/scooter) GitHub page.
+
+#### Telescope Dependencies
+
+For Telescope to work, `fd` and `ripgrep` are needed:
+
+```bash
+sudo pacman -Syu
+sudo pacman -S fd ripgrep
+```
+
+#### Vim Plug
+
+`Vim Plug` is a plugin manager used here to install plugins that do not have support for the `Lazy` package manager. Installation instructions can be found in the [Vim Plug](https://github.com/junegunn/vim-plug) GitHub page.
 
 ### Setup Steps
 ---
