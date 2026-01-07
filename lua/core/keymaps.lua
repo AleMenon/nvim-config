@@ -35,19 +35,6 @@ vim.keymap.set('n', '<S-Down>', ':resize +15<CR>', opts)
 vim.keymap.set('n', '<S-Left>', ':vertical resize -15<CR>', opts)
 vim.keymap.set('n', '<S-Right>', ':vertical resize +15<CR>', opts)
 
--- Buffers
-vim.keymap.set('n', '<Tab>', ':bnext<CR>', opts)
-vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts)
-vim.keymap.set('n', '<leader>xb', function()
-    local buffers = vim.fn.getbufinfo({ buflisted = 1 })
-    if #buffers > 1 and vim.bo.buftype ~= 'help' then
-        vim.cmd('Bdelete!')
-    else
-        vim.cmd('bdelete!')
-    end
-end, opts)
-vim.keymap.set('n', '<leader>b', '<cmd> enew <CR>', opts) -- new buffer
-
 -- Clipboard shortcut for WSL
 -- TODO: Uncomment this line if you're using wsl
 -- vim.keymap.set('v', '<leader>y', ':w !clip.exe<CR><CR>', opts)
@@ -73,10 +60,6 @@ vim.keymap.set('n', 'N', 'Nzzzv', opts)
 
 -- Keymap for my TODO plugin
 vim.keymap.set('n', '<leader>td', ':Td<CR>', opts)
-
--- Keymaps to change relative number column
-vim.keymap.set({'n', 'v'}, '<leader>ar', ':set relativenumber<CR>', opts)
-vim.keymap.set({'n', 'v'}, '<leader>dr', ':set norelativenumber<CR>', opts)
 
 -- Keymap to format a json in a new buffer
 vim.keymap.set('n', '<leader>fj', function ()

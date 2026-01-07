@@ -22,7 +22,8 @@ return { -- Highlight, edit, and navigate code
             'python',
             'sql',
             'powershell',
-            'toml'
+            'toml',
+            'robot'
         }
 
         require('nvim-treesitter').install(ensure_installed)
