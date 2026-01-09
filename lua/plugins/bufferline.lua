@@ -62,7 +62,11 @@ return {
 
         vim.keymap.set('n', '<Tab>', function ()
             local buffers = vim.fn.getbufinfo({ buflisted = 1 })
-            if vim.bo.filetype == 'gitgraph' and #buffers > 0 then
+            local outliers = {
+                gitgraph = true,
+                oil = true
+            }
+            if outliers[vim.bo.filetype] and #buffers > 0 then
                 vim.cmd('bnext')
             else
                 if #buffers > 0 then
