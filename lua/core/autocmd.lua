@@ -92,10 +92,11 @@ vim.api.nvim_create_autocmd("CursorMovedI", {
 	end,
 })
 
--- set comment string for robot files
+-- set some configs for robot files
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "robot",
     callback = function()
         vim.opt_local.commentstring = "# %s"
+        vim.keymap.set("i", "<Tab>", "    ", { buffer = true, noremap = true })
     end,
 })
