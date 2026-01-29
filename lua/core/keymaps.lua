@@ -81,10 +81,15 @@ vim.keymap.set('n', '<leader>fj', function ()
     vim.cmd("%s/True/true/ge")
     vim.cmd("%s/None/null/ge")
 
+    -- Copy of the json to clipboard after conversion
+    local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+    local text = table.concat(lines, "\n")
+    vim.fn.setreg('+', text)
+
     -- Format with jq
-    vim.cmd("%!jq")
+    vim.cmd('%!jq')
 
     -- Indent buffer
-    vim.cmd("normal gg=G")
-    vim.cmd("LspRestart jsonls")
+    vim.cmd('normal gg=G')
+    vim.cmd('LspRestart jsonls')
 end, opts)
