@@ -38,4 +38,3 @@ vim.opt.sessionoptions = {
     'winsize',
     'terminal',
 }
-vim.opt.undofile = true -- Restore the undotree from the file

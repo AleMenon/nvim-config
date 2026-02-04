@@ -138,7 +138,7 @@ return {
 
         -- Here's where the installs are configured, just add another lsp to the ensure_installed table for it to be
         -- installed by Mason. If you want to overwrite any configuration, just create an entry to the lsp folder
-        require('mason-tool-installer').setup { ensure_installed = {'clangd', 'marksman', 'texlab', 'jedi-language-server', 'lua_ls', 'jsonls'} }
+        require('mason-tool-installer').setup { ensure_installed = {'clangd', 'marksman', 'texlab', 'pyright', 'lua_ls', 'jsonls'} }
 
         require('mason-lspconfig').setup {
             ensure_installed = {},
