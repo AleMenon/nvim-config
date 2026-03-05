@@ -1,3 +1,43 @@
+--- @param tp string Define the filetype.
+--- @param cmd string Define what command will be used to format the file.
+--- @param lsp string The name of the lsp corresponding to the filetype.
+--- @return nil
+local function formatter(tp, cmd, lsp)
+    -- Create a buffer
+    local buf = vim.api.nvim_create_buf(true, false)
+    vim.api.nvim_set_current_buf(buf)
+
+    -- Set filetype and name for the new buffer
+    vim.bo.filetype = tp
+    vim.api.nvim_buf_set_name(0, 'tmp_' .. os.date('%H%M%S_%d%m%Y') .. '.' .. tp)
+
+    -- Paste yanked string
+    vim.cmd('normal! p')
+
+    if tp == 'json' then
+        -- Convert fields from python to json format
+        vim.cmd("%s/'/\"/ge")
+        vim.cmd("%s/False/false/ge")
+        vim.cmd("%s/True/true/ge")
+        vim.cmd("%s/None/null/ge")
+    end
+
+    -- Copy of the string to clipboard after conversion (in case of error with the formatter)
+    local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+    local text = table.concat(lines, "\n")
+    vim.fn.setreg('+', text)
+
+    -- Format with the command defined in cmd parameter
+    vim.cmd('%!' .. cmd)
+
+    if tp == 'json' then
+        -- Indent buffer
+        vim.cmd('normal gg=G')
+    end
+
+    vim.cmd('LspRestart ' .. lsp)
+end
+
 -- Set leader key
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -67,33 +107,10 @@ vim.keymap.set('n', '<leader>td', ':Td<CR>', opts)
 
 -- Keymap to format a json in a new buffer
 vim.keymap.set('n', '<leader>fj', function ()
+    formatter('json', 'jq', 'jsonls')
+end, { noremap = true, silent = true, desc = "Format json from clipboard"})
 
-    -- Create a buffer
-    local buf = vim.api.nvim_create_buf(true, false)
-    vim.api.nvim_set_current_buf(buf)
-
-    -- Set filetype and name for the new buffer
-    vim.bo.filetype = 'json'
-    vim.api.nvim_buf_set_name(0, 'tmp_' .. os.date('%H%M%S_%d%m%Y') .. '.json')
-
-    -- Paste yanked json
-    vim.cmd('normal! p')
-
-    -- Convert fields from python to json format
-    vim.cmd("%s/'/\"/ge")
-    vim.cmd("%s/False/false/ge")
-    vim.cmd("%s/True/true/ge")
-    vim.cmd("%s/None/null/ge")
-
-    -- Copy of the json to clipboard after conversion
-    local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
-    local text = table.concat(lines, "\n")
-    vim.fn.setreg('+', text)
-
-    -- Format with jq
-    vim.cmd('%!jq')
-
-    -- Indent buffer
-    vim.cmd('normal gg=G')
-    vim.cmd('LspRestart jsonls')
-end, opts)
+-- Keymap to format a xml in a new buffer
+vim.keymap.set('n', '<leader>fx', function ()
+    formatter('xml', 'xmllint --format -', 'lemminx')
+end, { noremap = true, silent = true, desc = "Format xml from clipboard"})
