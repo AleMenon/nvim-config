@@ -20,6 +20,8 @@ local function formatter(tp, cmd, lsp)
         vim.cmd("%s/False/false/ge")
         vim.cmd("%s/True/true/ge")
         vim.cmd("%s/None/null/ge")
+    elseif tp == 'xml' then
+        vim.cmd("%s/^\\n\\+//e")
     end
 
     -- Copy of the string to clipboard after conversion (in case of error with the formatter)
@@ -33,6 +35,8 @@ local function formatter(tp, cmd, lsp)
     if tp == 'json' then
         -- Indent buffer
         vim.cmd('normal gg=G')
+    elseif tp == 'xml' then
+        vim.cmd('%s/^\\(\\s*\\)/\\1\\1/')
     end
 
     vim.cmd('LspRestart ' .. lsp)
