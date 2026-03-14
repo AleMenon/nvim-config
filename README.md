@@ -74,6 +74,15 @@ sudo pacman -Syu
 sudo pacman -S fd ripgrep
 ```
 
+#### Formatter Keymaps Dependencies
+
+The configuration currently supports XML and JSON formatting from the clipboard, but for it to work, `jq` and `xmllint` are needed:
+
+```bash
+sudo pacman -Syu
+sudo pacman -S jq libxml2
+```
+
 #### Vim Plug
 
 `Vim Plug` is a plugin manager used here to install plugins that do not have support for the `Lazy` package manager. Installation instructions can be found in the [Vim Plug](https://github.com/junegunn/vim-plug) GitHub page.
