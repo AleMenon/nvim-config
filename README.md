@@ -74,6 +74,7 @@ sudo pacman -Syu
 sudo pacman -S fd ripgrep
 ```
 
+
 #### Formatter Keymaps Dependencies
 
 The configuration currently supports XML and JSON formatting from the clipboard, but for it to work, `jq` and `xmllint` are needed:
@@ -86,6 +87,15 @@ sudo pacman -S jq libxml2
 #### Vim Plug
 
 `Vim Plug` is a plugin manager used here to install plugins that do not have support for the `Lazy` package manager. Installation instructions can be found in the [Vim Plug](https://github.com/junegunn/vim-plug) GitHub page.
+
+#### CodeCompanion Configuration
+
+To use CodeCompanion, you must uncomment the line referencing the plugin in the `lazy-setup.lua` file to enable its installation. Additionally, you need to provide an API key for your chosen LLM. This key should be stored in a `.env` file within the `nvim/` directory (e.g., `EXAMPLE_API_KEY="your_key_here"`).
+<br>
+To configure other LLM agents, you might need to add new entries to the `adapters` table and modify existing entries in the `interactions` table.
+
+> [!NOTE]
+> Retrieving the API key from the `.env` file requires `ripgrep`, `cut`, and `tr` to be installed on your system.
 
 ### Setup Steps
 ---

@@ -32,5 +32,7 @@ return function()
         require 'plugins.gitgraph', -- Gitgraph
         require 'plugins.toggleterm', -- Plugin for using scooter
         require 'plugins.misc', -- Other useful plugins
+        -- TODO: Uncomment this line for CodeCompanion to be installed
+        -- require 'plugins.codecompanion', -- CodeCompanion for LLM integrations
     })
 end
