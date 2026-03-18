@@ -18,6 +18,8 @@ return {
                 gemini = function()
                     return require('codecompanion.adapters').extend('gemini', {
                         env = {
+                            -- TODO: Change key and path if you're on Windows or with another API key inside .env
+                            -- api_key = "cmd:rg <key> <path> | cut -d'=' -f2 | tr -d '\"'",
                             api_key = "cmd:rg GEMINI_API_KEY ~/.config/nvim/.env | cut -d'=' -f2 | tr -d '\"'",
                         },
                         schema = {
