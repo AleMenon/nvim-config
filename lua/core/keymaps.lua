@@ -38,8 +38,6 @@ local function formatter(tp, cmd, lsp)
     elseif tp == 'xml' then
         vim.cmd('%s/^\\(\\s*\\)/\\1\\1/')
     end
-
-    vim.cmd('LspRestart ' .. lsp)
 end
 
 -- Set leader key

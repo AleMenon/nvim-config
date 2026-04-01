@@ -97,7 +97,7 @@ vim.api.nvim_create_autocmd("FileType", {
     pattern = "robot",
     callback = function()
         vim.opt_local.commentstring = "# %s"
-        vim.keymap.set("i", "<Tab>", "    ", { buffer = true, noremap = true })
+        vim.keymap.set("i", "<Tab>", "    ", { buf = 0, noremap = true })
     end,
 })
 
