@@ -5,7 +5,8 @@ return {
             workspace = {
                 checkThirdParty = false,
                 library = {
-                    vim.env.VIMRUNTIME
+                    vim.env.VIMRUNTIME,
+                    "~/AppData/Roaming/yazi/config/plugins/types.yazi/"
                 },
             },
         },
