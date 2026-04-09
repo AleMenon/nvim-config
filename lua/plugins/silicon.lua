@@ -5,6 +5,7 @@ return {
 	main = "nvim-silicon",
 	opts = {
         debug = false,
+        to_clipboard = true,
 
         theme = "Dracula",
         font = "CaskaydiaMono Nerd Font",
@@ -13,9 +14,6 @@ return {
         shadow_color = "#1a1b26",
         pad_horiz = 80,
         pad_vert = 60,
-
-        no_line_number = true,
-        to_clipboard = true,
 
 		line_offset = function(args)
 			return args.line1
