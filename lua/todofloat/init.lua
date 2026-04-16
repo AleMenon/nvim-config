@@ -1,20 +1,8 @@
---[[
--- init.lua
---
--- This file is the implementation of the floating TODO list plugin.
---]]
-
---[[
--- Table that will contain the plugin configuration
---]]
 local M = {}
 
---[[
--- Function to get the expanded path from the home directory.
---
---Returns:
---    path: Complete path to the file we're trying to open.
---]]
+--- Get the expanded path from the home directory.
+--- @param path string Relative path to the target file.
+--- @return string extended_path Extended path for the target file.
 local function expand_path(path)
    if path:sub(1, 1) == "~" then
       local home = os.getenv("HOME") or os.getenv("USERPROFILE")
@@ -27,22 +15,16 @@ local function expand_path(path)
    return path
 end
 
---[[
--- Function the find the center of the screen.
--- 
--- Returns:
---    coordinates: The number equivalent to the center of the screen
---]]
+--- Find the center of the screen.
+--- @param outer integer Total number of lines.
+--- @param inner integer Desired buffer size (horizontally or vertically).
+--- @return number coordinate Coordinate to the center of the screen.
 local function center(outer, inner)
    return (outer - inner) / 2
 end
 
---[[
--- Function to set the configurations of the buffer we're trying to open.
---
--- Returns:
---    table: Table with the settings for the buffer.
---]]
+--- Set the configurations of the buffer we're trying to open.
+--- @return vim.api.keyset.win_config config Table with the options.
 local function win_config()
    local width = math.floor(vim.o.columns * 0.4)
    local height = math.floor(vim.o.lines * 0.8)
@@ -58,12 +40,8 @@ local function win_config()
 
 end
 
---[[
--- Function to create, open and set keymaps for the TODO buffer.
---
--- Returns: 
---    NIL.
---]]
+--- Create, open and set keymaps for the TODO buffer.
+--- @param target_file string Path to the target file.
 local function open_floating_file(target_file)
    local expanded_path = expand_path(target_file)
 
@@ -87,26 +65,10 @@ local function open_floating_file(target_file)
 
    -- Open the window with the configurations defined in the win_config() function
    vim.api.nvim_open_win(buf, true, win_config())
-
-   -- NOTE: Keymap to close the buffer with q, checks if it's saved, if not, warning (if you found this useful, just uncomment the code below)
-   --[[vim.api.nvim_buf_set_keymap(buf, 'n', 'q', '', {
-      noremap = true,
-      callback = function()
-         if vim.api.nvim_get_option_value("modified", {buf = buf}) then
-            vim.notify("Save your changes before closing the buffer", vim.log.levels.WARN)
-         else
-            vim.api.nvim_win_close(0, true)
-         end
-      end
-   })]]--
 end
 
---[[
--- Function that call the other configuration functions.
---
--- Returns:
---    NIL
---]]
+--- Init function.
+--- @param opts table Configuration options containing the `target_file`.
 local function setup_user_commands(opts)
    -- Checks for an existing target file, if == NIL, search for a todo.md file in the current directory
    local target_file = opts.target_file or "todo.md"
@@ -117,7 +79,6 @@ local function setup_user_commands(opts)
    end, {})
 end
 
--- Setup = the functions implemented above
 M.setup = function(opts)
    setup_user_commands(opts)
 end
