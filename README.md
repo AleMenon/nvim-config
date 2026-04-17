@@ -2,9 +2,9 @@
 
 This repository contains my Neovim configuration, including plugins, keymaps, and options that I find useful.
 
-![Menu](./images/menu.png) 
-![Plugins](./images/plugins.png) 
-![Telescope](./images/files-and-telescope.png) 
+![Menu](./images/menu.png)
+![Plugins](./images/plugins.png)
+![Telescope](./images/files-and-telescope.png)
 
 ## Directory Structure
 
