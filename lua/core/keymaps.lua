@@ -116,3 +116,5 @@ end, { noremap = true, silent = true, desc = "Format json from clipboard"})
 vim.keymap.set('n', '<leader>fx', function ()
     formatter('xml', 'xmllint --format -', 'lemminx')
 end, { noremap = true, silent = true, desc = "Format xml from clipboard"})
+
+vim.api.nvim_create_user_command('Explorer', 'silent !explorer .', { desc = 'Opne Windows Explorer in current directory' })
