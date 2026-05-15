@@ -35,6 +35,6 @@ return function()
         -- TODO: Uncomment this line for CodeCompanion to be installed
         -- require 'plugins.codecompanion', -- CodeCompanion for LLM integrations
         require 'plugins.silicon', -- Code snapshot plugin
-        require 'plugins.yazi'
+        require 'plugins.yazi',  -- File creation and management (new)
     })
 end
