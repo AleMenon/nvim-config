@@ -25,7 +25,6 @@ return { -- Highlight, edit, and navigate code
             'toml',
             'robot',
             'xml',
-            'rust',
             'solidity'
         }
 

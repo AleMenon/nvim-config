@@ -16,7 +16,7 @@ local function formatter(tp, cmd, lsp)
 
     if tp == 'json' then
         -- Convert fields from python to json format
-        vim.cmd("%s/'/\"/ge")
+        vim.cmd([[%s/"[^"]*"\|'/\=submatch(0) == "'" ? '"' : submatch(0)/ge]])
         vim.cmd("%s/False/false/ge")
         vim.cmd("%s/True/true/ge")
         vim.cmd("%s/None/null/ge")
