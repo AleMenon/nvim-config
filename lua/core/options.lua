@@ -4,21 +4,21 @@ vim.opt.tabstop = 4 -- Set the width of a tab character to 4 spaces
 vim.opt.softtabstop = 4 -- Makes backspacing work consistently with spaces
 
 -- TODO: Comment this line if you're using wsl
-vim.o.clipboard = 'unnamedplus' -- Sync clipboard between OS and system
+vim.opt.clipboard = 'unnamedplus' -- Sync clipboard between OS and system
 vim.opt.number = true -- Show line numbers
-vim.o.relativenumber = true -- Set relative numbered lines
+vim.opt.relativenumber = true -- Set relative numbered lines
 
-vim.o.wrap = false -- Disable wrapping
-vim.o.linebreak = true -- Break at word boundaries instead of cutting words
-vim.o.autoindent = true -- Copy indent from current line when starting a new one
+vim.opt.wrap = false -- Disable wrapping
+vim.opt.linebreak = true -- Break at word boundaries instead of cutting words
+vim.opt.autoindent = true -- Copy indent from current line when starting a new one
 
-vim.o.ignorecase = true -- Case-insensitive searching UNLESS capital in search
-vim.o.smartcase = true -- Smart case
-vim.o.hlsearch = false -- Set highlight on search 
+vim.opt.ignorecase = true -- Case-insensitive searching UNLESS capital in search
+vim.opt.smartcase = true -- Smart case
+vim.opt.hlsearch = false -- Set highlight on search
 
-vim.o.foldmethod = "indent" -- Method of folding
-vim.o.foldenable = true -- Alow folding in files
-vim.o.foldlevel = 99 -- Everything starts unfolded
+vim.opt.foldmethod = "indent" -- Method of folding
+vim.opt.foldenable = true -- Alow folding in files
+vim.opt.foldlevel = 99 -- Everything starts unfolded
 
 vim.opt.cursorline = true -- Show which line your cursor is on
 

@@ -1,8 +1,7 @@
 --- @param tp string Define the filetype.
 --- @param cmd string Define what command will be used to format the file.
---- @param lsp string The name of the lsp corresponding to the filetype.
 --- @return nil
-local function formatter(tp, cmd, lsp)
+local function formatter(tp, cmd)
     -- Create a buffer
     local buf = vim.api.nvim_create_buf(true, false)
     vim.api.nvim_set_current_buf(buf)
@@ -62,8 +61,6 @@ vim.keymap.set('n', '<leader>v', '<C-w>v', opts) -- split window vertically
 vim.keymap.set('n', '<leader>h', '<C-w>s', opts) -- split window horizontally
 vim.keymap.set('n', '<leader>se', '<C-w>=', opts) -- make split windows equal width & height
 vim.keymap.set('n', '<leader>xs', ':close<CR>', opts) -- close current split window
-vim.keymap.set('n', '<leader>xv', '<C-w>H', opts) -- close current split window
-vim.keymap.set('n', '<leader>xh', '<C-w>K', opts) -- close current split window
 
 -- Navigate between splits
 vim.keymap.set('n', '<C-k>', ':wincmd k<CR>', opts)
@@ -109,12 +106,12 @@ vim.keymap.set('n', '<leader>td', ':Td<CR>', opts)
 
 -- Keymap to format a json in a new buffer
 vim.keymap.set('n', '<leader>fj', function ()
-    formatter('json', 'jq', 'jsonls')
+    formatter('json', 'jq')
 end, { noremap = true, silent = true, desc = "Format json from clipboard"})
 
 -- Keymap to format a xml in a new buffer
 vim.keymap.set('n', '<leader>fx', function ()
-    formatter('xml', 'xmllint --format -', 'lemminx')
+    formatter('xml', 'xmllint --format -')
 end, { noremap = true, silent = true, desc = "Format xml from clipboard"})
 
 vim.api.nvim_create_user_command('Explorer', 'silent !explorer .', { desc = 'Opne Windows Explorer in current directory' })
