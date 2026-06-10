@@ -8,7 +8,7 @@ return {
         to_clipboard = true,
 
         theme = "Dracula",
-        font = "CaskaydiaMono Nerd Font",
+        font = "RobotoMono Nerd Font",
 
         background = "#1a1b26",
         shadow_color = "#1a1b26",
