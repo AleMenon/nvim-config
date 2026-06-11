@@ -70,7 +70,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
                     "--with-filename",
                     "--line-number",
                     "--column",
-                    "--smart-case",
+                    "--ignore-case",
                     "--no-ignore"
                 },
             },
