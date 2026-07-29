@@ -22,7 +22,6 @@ return function()
         require 'plugins.alpha', -- Welcome mensage and recent files
         require 'plugins.indent-blankline', -- Functions line
         require 'plugins.render-markdown', -- Markdown render
-        require 'plugins.oil', -- File creation and management
         require 'plugins.which-key', -- Useful for finding keymaps you don't remember
         require 'plugins.flash', -- Teleportation in the code
         require 'plugins.todo-comments', -- Better comments
@@ -35,7 +34,7 @@ return function()
         -- TODO: Uncomment this line for CodeCompanion to be installed
         -- require 'plugins.codecompanion', -- CodeCompanion for LLM integrations
         require 'plugins.silicon', -- Code snapshot plugin
-        require 'plugins.yazi',  -- File creation and management (new)
+        require 'plugins.yazi',  -- File creation and management
         require 'plugins.noice', -- Cmdline and notification improvement
     })
 end

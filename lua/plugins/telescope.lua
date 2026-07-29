@@ -71,12 +71,18 @@ return { -- Fuzzy Finder (files, lsp, etc)
                     "--line-number",
                     "--column",
                     "--ignore-case",
-                    "--no-ignore"
+                    "--no-ignore",
+                    "-g",
+                    "!.venv/",
+                    "-g",
+                    "!__pycache__/",
+                    "-g",
+                    "!.git/",
                 },
             },
             pickers = {
                 find_files = {
-                    find_command = { "fd", "--type", "f", "--no-ignore", "--hidden", "--exclude", ".git", "--exclude", ".venv"}
+                    find_command = { "fd", "--type", "f", "--no-ignore", "--hidden", "--exclude", ".git", "--exclude", ".venv", "--exclude", "__pycache__"}
                 },
             },
             extensions = {
