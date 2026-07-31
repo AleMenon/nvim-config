@@ -53,7 +53,30 @@ return {
             lualine_a = { mode },
             lualine_b = { 'branch' },
             lualine_c = { filename },
-            lualine_x = { diagnostics, diff, { 'encoding', cond = hide_in_width }, { 'filetype', cond = hide_in_width } },
+            lualine_x = {
+                {
+                    ---@diagnostic disable: different-requires
+                    require("noice").api.status.command.get,
+                    cond = require("noice").api.status.command.has,
+                    ---@diagnostic enable: different-requires
+                },
+                {
+                    ---@diagnostic disable: different-requires
+                    require("noice").api.status.mode.get,
+                    cond = require("noice").api.status.mode.has,
+                    ---@diagnostic enable: different-requires
+                },
+                diagnostics,
+                diff,
+                {
+                    'encoding',
+                    cond = hide_in_width
+                },
+                {
+                    'filetype',
+                    cond = hide_in_width
+                }
+            },
             lualine_y = { 'location' },
             lualine_z = { 'progress' },
          },
