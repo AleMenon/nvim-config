@@ -114,8 +114,11 @@ vim.keymap.set('n', '<leader>fx', function ()
     formatter('xml', 'xmllint --format -')
 end, { noremap = true, silent = true, desc = "Format xml from clipboard"})
 
-vim.api.nvim_create_user_command('Explorer', 'silent !explorer .', { desc = 'Opne Windows Explorer in current directory' })
+vim.api.nvim_create_user_command('Explorer', 'silent !explorer .', { desc = 'Open Windows Explorer in current directory' })
 
 vim.keymap.set('n', '<leader>cl', function ()
     vim.cmd('%s/^\\(.\\{-}\\[[A-Z]\\+\\]\\)\\(\\s\\+\\[.\\{-}\\]\\)\\+\\s\\+/\\1 /')
 end, { noremap = true, silent = true, desc = "Clean unnecessary info from log"})
+
+vim.keymap.set('n', '<leader>\\', ':terminal pwsh.exe<CR>i', { noremap = true, silent = true, desc = "Open Terminal"})
+vim.keymap.set('t', '<C-\\>', '<C-\\><C-n>', { noremap = true, silent = true, desc = "Exit terminal mode"})
