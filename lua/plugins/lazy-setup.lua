@@ -34,8 +34,5 @@ return function()
         -- require 'plugins.codecompanion', -- CodeCompanion for LLM integrations
         require 'plugins.silicon', -- Code snapshot plugin
         require 'plugins.yazi',  -- File creation and management
-        ---@diagnostic disable: different-requires
-        require 'plugins.noice', -- Cmdline and notification improvement
-        ---@diagnostic enable: different-requires
     })
 end

@@ -54,18 +54,6 @@ return {
             lualine_b = { 'branch' },
             lualine_c = { filename },
             lualine_x = {
-                {
-                    ---@diagnostic disable: different-requires
-                    require("noice").api.status.command.get,
-                    cond = require("noice").api.status.command.has,
-                    ---@diagnostic enable: different-requires
-                },
-                {
-                    ---@diagnostic disable: different-requires
-                    require("noice").api.status.mode.get,
-                    cond = require("noice").api.status.mode.has,
-                    ---@diagnostic enable: different-requires
-                },
                 diagnostics,
                 diff,
                 {
