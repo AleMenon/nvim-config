@@ -1,5 +1,6 @@
 return {
     "olimorris/codecompanion.nvim",
+    event = 'VeryLazy',
     version = "*",
     opts = {
         interactions = {
