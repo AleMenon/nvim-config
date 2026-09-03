@@ -55,4 +55,12 @@ return {
         version = "*",
         opts = {--[[ things you want to change go here]]}
     },
+    {
+        "azratul/live-share.nvim",
+        config = function()
+            require("live-share").setup({
+                username = "AleMenon",
+            })
+        end,
+    }
 }
