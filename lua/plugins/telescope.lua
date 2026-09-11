@@ -123,6 +123,10 @@ return { -- Fuzzy Finder (files, lsp, etc)
             builtin.live_grep { grep_open_files = true }
         end, { desc = '[S]earch by grep [O]pen files' })
 
+        vim.keymap.set({ 'n', 'v' }, '<leader>sS', function ()
+            builtin.grep_string { grep_open_files = true }
+        end, { desc = '[S]earch [S]tring in open files' })
+
         -- Shortcut for searching your Neovim configuration files
         vim.keymap.set('n', '<leader>sn', function()
             builtin.find_files { cwd = vim.fn.stdpath 'config' }

@@ -122,3 +122,11 @@ end, { noremap = true, silent = true, desc = "Clean unnecessary info from log"})
 
 vim.keymap.set('n', '<leader>\\', ':terminal pwsh.exe<CR>i', { noremap = true, silent = true, desc = "Open Terminal"})
 vim.keymap.set('t', '<C-\\>', '<C-\\><C-n>', { noremap = true, silent = true, desc = "Exit terminal mode"})
+
+vim.keymap.set('n', '<leader>dv', function ()
+    if vim.wo.diff then
+        vim.cmd('windo diffoff')
+    else
+        vim.cmd('windo diffthis')
+    end
+end, opts)
