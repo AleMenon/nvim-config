@@ -30,8 +30,6 @@ return function()
         require 'plugins.fugitive', -- Plugin to run git commands inside neovim
         require 'plugins.gitgraph', -- Gitgraph
         require 'plugins.misc', -- Other useful plugins
-        -- TODO: Uncomment this line for CodeCompanion to be installed
-        -- require 'plugins.codecompanion', -- CodeCompanion for LLM integrations
         require 'plugins.silicon', -- Code snapshot plugin
         require 'plugins.yazi',  -- File creation and management
     })
