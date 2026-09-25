@@ -56,10 +56,11 @@ return {
                 -- fill = {},
             },
         }
-        local opts = { noremap = true, silent = true }
-        vim.keymap.set('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', opts)
-        vim.keymap.set('n', '<leader>b', '<cmd> enew <CR>', opts) -- new buffer
-
+        local function opts(overrides)
+            vim.tbl_extend('force', { silent=true }, overrides or {})
+        end
+        vim.keymap.set('n', '<leader>b', '<cmd> enew <CR>', opts({ desc = 'New [B]uffer'}))
+        vim.keymap.set('n', '<S-Tab>', ':BufferLineCyclePrev<CR>', opts({ desc = 'Previous[S-] buffer[Tab]'}))
         vim.keymap.set('n', '<Tab>', function ()
             local buffers = vim.fn.getbufinfo({ buflisted = 1 })
             local outliers = {
@@ -73,7 +74,7 @@ return {
                     vim.cmd('BufferLineCycleNext')
                 end
             end
-        end, opts)
+        end, opts({ desc = 'Next buffer[Tab]'}))
 
         vim.keymap.set('n', '<leader>xb', function()
             local buffers = vim.fn.getbufinfo({ buflisted = 1 })
@@ -81,7 +82,7 @@ return {
             if #buffers > 1 and vim.bo.buftype ~= 'help' then
                 vim.cmd('Bdelete! #')
             end
-        end, opts)
+        end, opts({ desc = 'Close[x] [B]uffer'}))
 
     end,
 }

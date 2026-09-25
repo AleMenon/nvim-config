@@ -11,5 +11,5 @@ return {
             }
         }
     },
-    vim.keymap.set('n', '<leader>mk', ':RenderMarkdown toggle<CR>', { noremap = true, silent = true }) -- toggle markdown
+    vim.keymap.set('n', '<leader>mk', ':RenderMarkdown toggle<CR>', { silent = true, desc = 'Toggle Render[M]ar[K]down' })
 }

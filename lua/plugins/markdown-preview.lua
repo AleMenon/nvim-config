@@ -7,5 +7,5 @@ return {
     end,
     ft = { "markdown", 'md' },
 
-    vim.keymap.set('n', '<leader>mp', ':MarkdownPreviewToggle<CR>' , { desc = '[M]arkdown [P]review', noremap = true, silent = true })
+    vim.keymap.set('n', '<leader>mp', ':MarkdownPreviewToggle<CR>' , { desc = '[M]arkdown [P]review', silent = true })
 }

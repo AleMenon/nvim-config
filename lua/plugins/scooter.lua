@@ -49,7 +49,7 @@ return function()
         scooter_term:open()
     end
 
-    vim.keymap.set('n', '<leader>sp', open_scooter, { desc = 'Open scooter' })
+    vim.keymap.set('n', '<leader>sp', open_scooter, { desc = 'Open [S]cooter [P]' })
     vim.keymap.set('v', '<leader>sp',
         function()
             local selection = vim.fn.getreg('"')
@@ -57,5 +57,5 @@ return function()
             open_scooter_with_text(vim.fn.getreg('a'))
             vim.fn.setreg('"', selection)
         end,
-        { desc = 'Search selected text in scooter' })
+        { desc = 'Search selected text in [S]cooter [P]' })
 end

@@ -55,20 +55,18 @@ return {
             function()
                 require('gitgraph').draw({}, { all = true, max_count = 5000 })
             end,
-            desc = "GitGraph - Draw",
+            desc = "[G]it[G]raph - Draw",
         },
         {
             "<leader>dc",
             ":DiffviewClose<CR>",
-            desc = "DiffviewClose", 
-            noremap = true, 
+            desc = "[D]iffview[C]lose",
             silent = true,
         },
         {
             "<leader>do",
             ":DiffviewOpen<CR>",
-            desc = "DiffviewOpen", 
-            noremap = true, 
+            desc = "[D]iffview[O]pen",
             silent = true,
         },
     },
