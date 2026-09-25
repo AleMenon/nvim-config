@@ -33,6 +33,6 @@ return {
         'n',
         '<leader>tc',
         ':CsvViewToggle<CR>',
-        {noremap = true, silent = true, desc = 'Toggle CsvView'}
+        { silent = true, desc = '[T]oggle [C]svView'}
     )
 }
