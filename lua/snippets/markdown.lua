@@ -6,5 +6,12 @@ local fmt = require('luasnip.extras.fmt').fmt
 local rep = require('luasnip.extras').rep
 
 return {
-    -- Insert snippets here
+    s(
+        'jira',
+        fmt('- [ ] [AUT-{}](https://jira.fkn.com.br:8443/browse/AUT-{}) {}', {
+            i(1, 'number'),
+            rep(1),
+            i(2, 'description'),
+        })
+    ),
 }

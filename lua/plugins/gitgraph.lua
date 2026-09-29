@@ -1,37 +1,40 @@
+local symbols = {
+    merge_commit = '',
+    commit = '',
+    merge_commit_end = '',
+    commit_end = '',
+    GVER = '',
+    GHOR = '',
+    GCLD = '',
+    GCRD = '╭',
+    GCLU = '',
+    GCRU = '',
+    GLRU = '',
+    GLRD = '',
+    GLUD = '',
+    GRUD = '',
+    GFORKU = '',
+    GFORKD = '',
+    GRUDCD = '',
+    GRUDCU = '',
+    GLUDCD = '',
+    GLUDCU = '',
+    GLRDCL = '',
+    GLRDCR = '',
+    GLRUCL = '',
+    GLRUCR = '',
+}
+
+if vim.fn.has('win32') then
+    symbols = {}
+end
+
 return {
     'isakbm/gitgraph.nvim',
     dependencies = { 'sindrets/diffview.nvim' },
     opts = {
         git_cmd = "git",
-        -- TODO: Comment the symbols table if you're on Windows
-        symbols = {
-            merge_commit = '',
-            commit = '',
-            merge_commit_end = '',
-            commit_end = '',
-
-            -- Advanced symbols
-            GVER = '',
-            GHOR = '',
-            GCLD = '',
-            GCRD = '╭',
-            GCLU = '',
-            GCRU = '',
-            GLRU = '',
-            GLRD = '',
-            GLUD = '',
-            GRUD = '',
-            GFORKU = '',
-            GFORKD = '',
-            GRUDCD = '',
-            GRUDCU = '',
-            GLUDCD = '',
-            GLUDCU = '',
-            GLRDCL = '',
-            GLRDCR = '',
-            GLRUCL = '',
-            GLRUCR = '',
-        },
+        symbols = symbols,
         format = {
             timestamp = '%H:%M:%S %d-%m-%Y',
             fields = { 'hash', 'timestamp', 'author', 'branch_name', 'tag' },
