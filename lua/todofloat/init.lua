@@ -60,7 +60,7 @@ local function open_floating_file(target_file)
       vim.api.nvim_buf_set_name(buf, expanded_path)
    end
 
-   -- Deactivate swap for different sessions 
+   -- Deactivate swap for different sessions
    vim.bo[buf].swapfile = false
 
    -- Open the window with the configurations defined in the win_config() function
@@ -71,7 +71,7 @@ end
 --- @param opts table Configuration options containing the `target_file`.
 local function setup_user_commands(opts)
    -- Checks for an existing target file, if == NIL, search for a todo.md file in the current directory
-   local target_file = opts.target_file or "todo.md"
+   local target_file = opts.target_file or (vim.fn.stdpath("config") .. "/lua/todofloat/todo.md")
 
    -- Create the command for the plugin, and use the functions above
    vim.api.nvim_create_user_command("Td", function()
@@ -80,6 +80,7 @@ local function setup_user_commands(opts)
 end
 
 M.setup = function(opts)
+    opts = opts or {}
    setup_user_commands(opts)
 end
 
