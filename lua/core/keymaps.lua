@@ -92,8 +92,6 @@ vim.keymap.set('n', '<C-d>', '<C-d>zz', opts({ desc = 'Scroll half-page [D]own' 
 vim.keymap.set('n', '<C-u>', '<C-u>zz', opts({ desc = 'Scroll half-page [U]p' }))
 vim.keymap.set('n', '<C-f>', '<C-f>zz', opts({ desc = 'Scroll full page down[F]' }))
 vim.keymap.set('n', '<C-b>', '<C-b>zz', opts({ desc = 'Scroll full page up[B]' }))
-vim.keymap.set('n', '<C-e>', '<C-d>zz', opts({ desc = 'Scroll one line down[E]' }))
-vim.keymap.set('n', '<C-y>', '<C-u>zz', opts({ desc = 'Scroll one line up[Y]' }))
 
 vim.keymap.set('n', '<leader>td', ':Td<CR>', opts({ desc = 'Open [T]O[D]O plugin pop-up' }))
 
