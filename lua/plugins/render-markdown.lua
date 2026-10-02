@@ -7,7 +7,10 @@ return {
     opts = {
         checkbox = {
             custom = {
-                paused = { raw = '[||]', rendered = '❚❚', highlight = 'RenderMarkdownUnchecked', scope_highlight = nil }
+                paused = { raw = '[||]', rendered = '❚❚', highlight = 'RenderMarkdownUnchecked', scope_highlight = nil },
+                waiting_integration = { raw = '[=]', rendered = '🔗', highlight = 'RenderMarkdownUnchecked', scope_highlight = nil },
+                waiting_pr = { raw = '[~]', rendered = '🔍', highlight = 'RenderMarkdownUnchecked', scope_highlight = nil },
+                waiting_package = { raw = '[>]', rendered = '📦', highlight = 'RenderMarkdownUnchecked', scope_highlight = nil }
             }
         }
     },
