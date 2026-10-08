@@ -61,10 +61,6 @@ Then install tree-sitter-cli for LaTeX highlighting:
 npm install -g tree-sitter-cli
 ```
 
-#### Scooter
-
-For the replace tool configuration found in the `scooter.lua` file inside **plugins/** folder, you'll need to install scooter CLI, see more about it in the [Scooter](https://github.com/thomasschafer/scooter) GitHub page.
-
 #### Telescope Dependencies
 
 For Telescope to work, `fd` and `ripgrep` are needed:

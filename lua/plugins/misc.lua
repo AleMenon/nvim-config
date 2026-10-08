@@ -49,13 +49,6 @@ return {
         end
     },
     {
-        -- Being used by Scooter
-        'akinsho/toggleterm.nvim',
-        event = 'VeryLazy',
-        version = "*",
-        opts = {--[[ things you want to change go here]]}
-    },
-    {
         "azratul/live-share.nvim",
         config = function()
             require("live-share").setup({

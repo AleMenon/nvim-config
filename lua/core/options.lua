@@ -42,3 +42,5 @@ vim.opt.sessionoptions = {
 -- Deactivate modeline function (security concerns)
 vim.opt.modeline = false
 vim.opt.modelines = 0
+
+vim.opt.grepprg = "rg --vimgrep"
