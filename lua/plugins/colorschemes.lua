@@ -1,8 +1,8 @@
-return { 
+return {
    -- Catppuccin colorscheme
    {
-      "catppuccin/nvim", 
-      name = "catppuccin", 
+      "catppuccin/nvim",
+      name = "catppuccin",
       lazy = false,
       priority = 1001,
       opts = {
@@ -13,9 +13,9 @@ return {
    },
 
    -- Gruvbox colorscheme
-   { 
-      "ellisonleao/gruvbox.nvim", 
-      priority = 1000 , 
+   {
+      "ellisonleao/gruvbox.nvim",
+      priority = 1000 ,
       lazy = false,
       config = true,
       opts = {

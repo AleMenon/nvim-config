@@ -11,26 +11,19 @@ return function()
     vim.opt.rtp:prepend(lazypath)
 
     require('lazy').setup({
-        require 'plugins.colorschemes', -- Colorscheme plugins
-        require 'plugins.bufferline', -- Buffer manager
-        require 'plugins.lualine', -- Lualine
-        require 'plugins.treesitter', -- Highlighting
-        require 'plugins.telescope', -- fzf files explorer
-        require 'plugins.lsp', -- lsp configuration
-        require 'plugins.autocompletion', -- Text suggestions and autocompletion
-        require 'plugins.gitsigns', -- Git plugin
         require 'plugins.alpha', -- Welcome mensage and recent files
-        require 'plugins.indent-blankline', -- Functions line
-        require 'plugins.render-markdown', -- Markdown render
-        require 'plugins.which-key', -- Useful for finding keymaps you don't remember
-        require 'plugins.flash', -- Teleportation in the code
-        require 'plugins.todo-comments', -- Better comments
+        require 'plugins.autocompletion', -- Text suggestions and autocompletion
+        require 'plugins.bufferline', -- Buffer manager
+        require 'plugins.colorschemes', -- Colorscheme plugins
         require 'plugins.csv-view', -- CSV file render
-        require 'plugins.markdown-preview', -- Web markdown preview
-        require 'plugins.fugitive', -- Plugin to run git commands inside neovim
         require 'plugins.gitgraph', -- Gitgraph
+        require 'plugins.gitsigns', -- Git plugin
+        require 'plugins.lsp', -- lsp configuration
+        require 'plugins.lualine', -- Lualine
         require 'plugins.misc', -- Other useful plugins
-        require 'plugins.silicon', -- Code snapshot plugin
+        require 'plugins.render-markdown', -- Markdown render
+        require 'plugins.telescope', -- fzf files explorer
+        require 'plugins.treesitter', -- Highlighting
         require 'plugins.yazi',  -- File creation and management
     })
 end
