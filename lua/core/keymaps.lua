@@ -118,3 +118,7 @@ vim.keymap.set('n', '<leader>dv', function ()
 end, opts({ desc = 'Toggle [D]iff [V]iew'}))
 
 vim.keymap.set('v', '<leader>p', '"_dP', opts({ desc = '[P]aste discarding content' }))
+
+vim.keymap.set("n", "<leader>ld", function()
+    vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+end, { desc = "Toggle [L]SP [D]iagnostics" })
