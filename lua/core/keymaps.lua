@@ -105,8 +105,20 @@ vim.keymap.set('n', '<leader>fx', function ()
 end, opts({ desc = '[F]ormat [X]ML from clipboard' }))
 
 vim.keymap.set('n', '<leader>cl', function ()
-    vim.cmd('%s/^\\(.\\{-}\\[[A-Z]\\+\\]\\)\\(\\s\\+\\[.\\{-}\\]\\)\\+\\s\\+/\\1 /') end, opts({ desc = '[C]lean unecessary [L]og information from .log files'}))
-vim.keymap.set('n', '<leader>\\', ':terminal pwsh.exe<CR>i', opts({ desc = 'Open terminal[\\]'}))
+    vim.cmd('%s/^\\(.\\{-}\\[[A-Z]\\+\\]\\)\\(\\s\\+\\[.\\{-}\\]\\)\\+\\s\\+/\\1 /')
+end, opts({ desc = '[C]lean unecessary [L]og information from .log files'}))
+
+vim.keymap.set('n', '<leader>\\', function ()
+    local shell
+    if vim.fn.has('win32') == 1 then
+        shell = 'pwsh.exe'
+    else
+        shell = vim.env.SHELL or 'bash'
+    end
+    vim.cmd.terminal(shell)
+    vim.cmd.startinsert()
+end, opts({ desc = 'Open terminal[\\]'}))
+
 vim.keymap.set('t', '<C-\\>', '<C-\\><C-n>', opts({ desc = 'Exit terminal[\\] mode'}))
 
 vim.keymap.set('n', '<leader>dv', function ()
