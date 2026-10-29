@@ -116,5 +116,9 @@ vim.api.nvim_create_autocmd("SessionLoadPost", {
 -- delete trailing spaces before saving a file
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*",
-  command = "%s/\\s\\+$//e"
+  callback = function ()
+      local view = vim.fn.winsaveview()
+      vim.cmd("%s/\\s\\+$//e")
+      vim.fn.winrestview(view)
+  end
 })
