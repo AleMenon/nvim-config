@@ -25,5 +25,6 @@ return function()
         require 'plugins.telescope', -- fzf files explorer
         require 'plugins.treesitter', -- Highlighting
         require 'plugins.yazi',  -- File creation and management
+        require 'plugins.codecompanion', -- LLM integration
     })
 end
