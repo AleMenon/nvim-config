@@ -26,5 +26,6 @@ return function()
         require 'plugins.treesitter', -- Highlighting
         require 'plugins.yazi',  -- File creation and management
         require 'plugins.codecompanion', -- LLM integration
+        require 'plugins.img-clip' -- Paste and import images
     })
 end
