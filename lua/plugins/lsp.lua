@@ -136,6 +136,10 @@ return {
 
         capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
+        vim.lsp.config('*', {
+            capabilities = capabilities
+        })
+
         -- Here's where the installs are configured, just add another lsp to the ensure_installed table for it to be
         -- installed by Mason. If you want to overwrite any configuration, just create an entry to the lsp folder
         require('mason-tool-installer').setup {
