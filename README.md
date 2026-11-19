@@ -4,7 +4,7 @@ My personal Neovim configuration for coding, writing, and everyday file manageme
 
 ## Features
 
-`<leader>` is **Space**. Shortcuts below are for Normal mode unless noted otherwise. These are some of the many shortcuts and features
+`<leader>` is **Space**. Shortcuts below are for Normal mode. These are some of the many shortcuts and features.
 
 | Workflow | Features | Try it |
 | --- | --- | --- |
@@ -139,11 +139,6 @@ To use another provider, adjust `adapters` and `interactions` in that file. Imag
     - The terminal shortcut (`<leader>\`) launches `pwsh.exe`, so install PowerShell 7 or adjust the shell in `lua/core/keymaps.lua`.
     - GitGraph automatically uses its default symbols on Windows.
     - Files with things that need changing depending on the system you're in have a *TODO* comment right above them with instructions.
-
-## Configuration Notes
-
-- CSV files currently use `;` as the delimiter, while TSV files use tabs. Adjust [csv-view.lua](./lua/plugins/csv-view.lua) for your data.
-- Code snapshots (`<leader>cs`) use the external `silicon` executable and the configured RobotoMono Nerd Font.
 
 ## Final Notes
 
