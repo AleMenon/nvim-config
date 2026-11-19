@@ -28,7 +28,8 @@ return { -- Highlight, edit, and navigate code
             'rust',
             'regex',
             'go',
-            'yaml'
+            'yaml',
+            'csv'
         }
 
         require('nvim-treesitter').install(ensure_installed)

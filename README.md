@@ -4,7 +4,7 @@ My personal Neovim configuration for coding, writing, and everyday file manageme
 
 ## Features
 
-`<leader>` is **Space**. Shortcuts below are for Normal mode unless noted otherwise.
+`<leader>` is **Space**. Shortcuts below are for Normal mode unless noted otherwise. These are some of the many shortcuts and features
 
 | Workflow | Features | Try it |
 | --- | --- | --- |
@@ -23,32 +23,22 @@ Completion uses `<Tab>` / `<S-Tab>` to select suggestions and `<C-y>` to accept 
 
 **Coding** — LSP completion, diagnostics and syntax highlighting.
 
-<!-- TODO: Capture: open a small source file with an attached LSP, type part of a symbol in Insert mode, and trigger completion with Ctrl+Space. Save as images/coding.png. -->
 ![Coding with LSP completion and diagnostics](./images/coding.png)
 
 **Navigation** — Telescope file search with a live source preview.
 
-<!-- TODO: Capture: open this repository, press Space sf, and search for a Lua configuration file with its preview visible. Save as images/navigation.png. -->
 ![Telescope file search and source preview](./images/navigation.png)
 
 **Writing and tasks** — Rendered Markdown with the custom floating TODO window.
 
-<!-- TODO:Capture: open a Markdown document with headings, a list, and a code block. Enable rendering with Space mk if needed, then open a sample TODO file with Space td. Save as images/writing.png. -->
 ![Rendered Markdown and floating TODO window](./images/writing.png)
 
 **Git review** — Browse commit history and inspect changes with Diffview.
 
-<!-- TODO:Capture: in a public repository, press Space gg and select a commit to open its diff. Save as images/git-review.png. -->
 ![Commit changes in Diffview](./images/git-review.png)
-
-**CSV tables** — Bordered columns for structured data.
-
-<!-- TODO:Capture: open a small semicolon-delimited CSV with a header and several rows, then press Space tc. Save as images/csv.png. -->
-![CSV data displayed as a bordered table](./images/csv.png)
 
 **File management** — Yazi inside Neovim.
 
-<!-- TODO:Capture: open a file in this repository, press Space -, and select a file with a preview. Save as images/yazi.png. -->
 ![Yazi file manager inside Neovim](./images/yazi.png)
 
 ## Directory Structure
