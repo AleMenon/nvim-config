@@ -3,44 +3,63 @@ local function opts(overrides)
 end
 
 --- @param tp string Define the filetype.
---- @param cmd string Define what command will be used to format the file.
 --- @return nil
-local function formatter(tp, cmd)
+local function formatter(tp)
+    -- Get from clipboard
+    local input = vim.fn.getreg('+')
+    local output
+
+    if tp == 'json' then
+        local script = table.concat({
+            'import json',
+            'import ast',
+            'import sys',
+            '',
+            'text = sys.stdin.read()',
+            'data = json.loads(text)',
+            'print(json.dumps(data, indent=4, ensure_ascii=False))',
+        }, '\n')
+
+        -- Run system command
+        output = vim.system(
+            { 'python', '-X', 'utf8', '-c', script },
+            { stdin = input, text = true }
+        ):wait()
+
+    elseif tp == 'xml' then
+        -- Run system command
+        output = vim.system(
+            { 'xmllint', '--nonet', '--format', '-' },
+            {
+                stdin = input,
+                text = true,
+                env = {
+                    XMLLINT_INDENT = '    '
+                }
+            }
+        ):wait()
+    else
+        return
+    end
+
+    if output.code ~= 0 then
+        vim.notify(output.stderr, vim.log.levels.ERROR)
+        return
+    end
+
     -- Create a buffer
     local buf = vim.api.nvim_create_buf(true, false)
     vim.api.nvim_set_current_buf(buf)
 
     -- Set filetype and name for the new buffer
     vim.bo.filetype = tp
-    vim.api.nvim_buf_set_name(0, 'tmp_' .. os.date('%H%M%S_%d%m%Y') .. '.' .. tp)
+    vim.api.nvim_buf_set_name(buf, 'tmp_' .. os.date('%H%M%S_%d%m%Y') .. '.' .. tp)
 
-    -- Paste yanked string
-    vim.cmd('normal! p')
-
-    if tp == 'json' then
-        -- Convert fields from python to json format
-        vim.cmd([[%s/"[^"]*"\|'/\=submatch(0) == "'" ? '"' : submatch(0)/ge]])
-        vim.cmd("%s/False/false/ge")
-        vim.cmd("%s/True/true/ge")
-        vim.cmd("%s/None/null/ge")
-    elseif tp == 'xml' then
-        vim.cmd("%s/^\\n\\+//e")
-    end
-
-    -- Copy of the string to clipboard after conversion (in case of error with the formatter)
-    local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
-    local text = table.concat(lines, "\n")
-    vim.fn.setreg('+', text)
-
-    -- Format with the command defined in cmd parameter
-    vim.cmd('%!' .. cmd)
-
-    if tp == 'json' then
-        -- Indent buffer
-        vim.cmd('normal gg=G')
-    elseif tp == 'xml' then
-        vim.cmd('%s/^\\(\\s*\\)/\\1\\1/')
-    end
+    -- Let content to buffer
+    vim.api.nvim_buf_set_lines(
+        buf, 0, -1, false,
+        vim.split(vim.trim(output.stdout), '\n')
+    )
 end
 
 -- Set leader key
@@ -96,12 +115,12 @@ vim.keymap.set('n', '<C-b>', '<C-b>zz', opts({ desc = 'Scroll full page up[B]' }
 vim.keymap.set('n', '<leader>td', ':Td<CR>', opts({ desc = 'Open [T]O[D]O plugin pop-up' }))
 
 vim.keymap.set('n', '<leader>fj', function ()
-    formatter('json', 'jq')
+    formatter('json')
 end, opts({ desc = '[F]ormat [J]son from clipboard' }))
 
 -- Keymap to format a xml in a new buffer
 vim.keymap.set('n', '<leader>fx', function ()
-    formatter('xml', 'xmllint --format -')
+    formatter('xml')
 end, opts({ desc = '[F]ormat [X]ML from clipboard' }))
 
 vim.keymap.set('n', '<leader>cl', function ()
